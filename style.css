@@ -1088,3 +1088,152 @@ footer{
     border-top:1px solid rgba(255,255,255,.08);
 
 }
+/* ================================
+   Ribbon Container 꾸미는 리본 시스템
+================================ */
+
+.ribbon-container{
+
+    position:absolute;
+
+    top:0;
+
+    right:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-end;
+
+    z-index:50;
+
+    pointer-events:none;
+
+}
+
+/* ================================
+   Ribbon
+================================ */
+
+.ribbon{
+
+    width:145px;
+
+    height:34px;
+
+    margin-top:8px;
+
+    margin-right:-38px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:.82rem;
+
+    font-weight:700;
+
+    color:white;
+
+    transform:rotate(45deg);
+
+    letter-spacing:.5px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.35);
+
+    transition:.3s;
+
+}
+
+.guild-card:hover .ribbon{
+
+    margin-right:-28px;
+
+}
+
+/* ================================
+   Colors
+================================ */
+
+.ribbon.hot{
+
+    background:#ff3434;
+
+}
+
+.ribbon.new{
+
+    background:#1877ff;
+
+}
+
+.ribbon.rank{
+
+    background:#d99b00;
+
+}
+
+.ribbon.best{
+
+    background:#8739ff;
+
+}
+
+.ribbon.event{
+
+    background:#16b8b0;
+
+}
+
+.ribbon.recruit{
+
+    background:#2dbf5c;
+
+}
+
+.ribbon.closed{
+
+    background:#666;
+
+}
+
+/* Glow */
+
+.ribbon.hot{
+
+    box-shadow:0 0 18px rgba(255,40,40,.5);
+
+}
+
+.ribbon.new{
+
+    box-shadow:0 0 18px rgba(0,120,255,.45);
+
+}
+
+.ribbon.rank{
+
+    box-shadow:0 0 18px rgba(255,170,0,.45);
+
+}
+
+.ribbon.best{
+
+    box-shadow:0 0 18px rgba(135,57,255,.45);
+
+}
+
+.ribbon.event{
+
+    box-shadow:0 0 18px rgba(22,184,176,.45);
+
+}
+
+.ribbon.recruit{
+
+    box-shadow:0 0 18px rgba(40,220,120,.45);
+
+}
