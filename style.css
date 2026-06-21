@@ -1234,31 +1234,87 @@ footer{
     box-shadow:0 0 18px rgba(40,220,120,.45);
 
 }
+
 /* ===========================
-   추천 길드
+   추천 길드 (PC)
 =========================== */
 
 #featuredGuilds{
 
     display:grid;
-
     grid-template-columns:repeat(4,1fr);
-
     gap:24px;
 
 }
 
-
 /* ===========================
-   전체 길드
+   전체 길드 (PC)
 =========================== */
 
 #guildContainer{
 
     display:grid;
-
     grid-template-columns:repeat(6,1fr);
-
     gap:20px;
+
+}
+
+/* ===========================
+   태블릿
+=========================== */
+
+@media (max-width:1024px){
+
+    #featuredGuilds{
+
+        grid-template-columns:repeat(3,1fr);
+
+    }
+
+    #guildContainer{
+
+        grid-template-columns:repeat(4,1fr);
+
+    }
+
+}
+
+/* ===========================
+   모바일
+=========================== */
+
+@media (max-width:768px){
+
+    #featuredGuilds{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    #guildContainer{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+/* ===========================
+   작은 모바일
+=========================== */
+
+@media (max-width:480px){
+
+    #featuredGuilds{
+
+        grid-template-columns:1fr;
+
+    }
+
+    #guildContainer{
+
+        grid-template-columns:1fr;
+
+    }
 
 }
