@@ -92,7 +92,7 @@ function createGuildCard(guild){
 
     <div class="ribbon-container">
 
-        ${createRibbon(guild.ribbons)}
+        ${createRibbon(guild)}
 
     </div>
 
@@ -148,39 +148,54 @@ function createGuildCard(guild){
 // 리본 생성
 // ======================================================
 
-function createRibbon(ribbons){
-
-    if(!ribbons) return "";
+function createRibbon(guild){
 
     let html="";
 
-    ribbons.forEach(text=>{
-
-        let css="";
-
-        if(text.startsWith("HOT")) css="hot";
-
-        else if(text.startsWith("NEW")) css="new";
-
-        else if(text.startsWith("RANK")) css="rank";
-
-        else if(text.startsWith("BEST")) css="best";
-
-        else if(text.startsWith("모집")) css="recruit";
-
-        else css="event";
+    // HOT
+    if(guild.isHot){
 
         html+=`
+        <div class="ribbon hot">
+            🔥 HOT
+        </div>`;
+    }
 
-        <div class="ribbon ${css}">
+    // NEW
+    if(guild.isNew){
 
-            ${text}
+        html+=`
+        <div class="ribbon new">
+            🆕 NEW
+        </div>`;
+    }
 
-        </div>
+    // RANK
+    if(guild.rank){
 
-        `;
+        html+=`
+        <div class="ribbon rank">
+            👑 RANK #${guild.rank}
+        </div>`;
+    }
 
-    });
+    // 모집중
+    if(guild.status==="recruit"){
+
+        html+=`
+        <div class="ribbon recruit">
+            🟢 모집중
+        </div>`;
+    }
+
+    // 마감
+    if(guild.status==="closed"){
+
+        html+=`
+        <div class="ribbon closed">
+            🔒 모집마감
+        </div>`;
+    }
 
     return html;
 
