@@ -118,7 +118,7 @@ function createGuildCard(guild){
 
         <div class="guild-info">
 
-            👥 ${guild.members}
+            👥 ${guild.members} / ${guild.capacity}
 
         </div>
 
