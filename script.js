@@ -131,7 +131,7 @@ function createGuildCard(guild){
             target="_blank"
             class="join-btn">
 
-            가입하기
+            문의하기
 
         </a>
 
