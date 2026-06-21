@@ -1,0 +1,1090 @@
+/* ==============================
+   협동 디펜스 길드 사이트
+   Base Style
+============================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+
+    --bg:#07152d;
+    --bg2:#10254c;
+
+    --card:#0b1d3d;
+
+    --text:#ffffff;
+    --sub:#c9d4ec;
+
+    --cyan:#37d7ff;
+    --purple:#bb72ff;
+    --green:#55ff8a;
+    --orange:#ffb44c;
+
+    --radius:24px;
+
+}
+
+body{
+
+    font-family:"Pretendard",sans-serif;
+
+    color:var(--text);
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--bg),
+            var(--bg2)
+        );
+
+    min-height:100vh;
+
+}
+
+/* ==============================
+HEADER
+============================== */
+
+header{
+
+    text-align:center;
+
+    padding:60px 20px;
+
+}
+
+header h1{
+
+    font-size:3rem;
+
+    font-weight:800;
+
+    margin-bottom:15px;
+
+}
+
+header p{
+
+    color:var(--sub);
+
+    font-size:1.2rem;
+
+}
+
+/* ==============================
+MENU GRID
+============================== */
+
+.menu-grid{
+
+    width:90%;
+
+    max-width:1400px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(320px,1fr));
+
+    gap:35px;
+
+}
+
+/* ==============================
+MENU CARD
+============================== */
+
+.menu-card{
+
+    background:linear-gradient(
+        180deg,
+        rgba(7,22,52,.9),
+        rgba(4,13,32,.95)
+    );
+
+    border:2px solid rgba(55,215,255,.5);
+
+    border-radius:28px;
+
+    text-decoration:none;
+
+    color:white;
+
+    padding:50px 35px;
+
+    text-align:center;
+
+    transition:.35s;
+
+    box-shadow:
+        0 0 25px rgba(0,0,0,.25);
+
+}
+
+.menu-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+        0 0 35px rgba(55,215,255,.35);
+
+    border-color:var(--cyan);
+
+}
+
+.menu-card img{
+
+    width:90px;
+
+    margin-bottom:25px;
+
+}
+
+.menu-card h2{
+
+    font-size:2rem;
+
+    margin-bottom:15px;
+
+}
+
+.menu-card span{
+
+    color:var(--sub);
+
+    line-height:1.7;
+
+}
+
+/* ==============================
+SEARCH
+============================== */
+
+.search{
+
+    width:90%;
+
+    max-width:900px;
+
+    margin:70px auto;
+
+}
+
+.search input{
+
+    width:100%;
+
+    padding:18px 25px;
+
+    font-size:1rem;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:50px;
+
+    background:#122a56;
+
+    color:white;
+
+}
+
+.search input::placeholder{
+
+    color:#98a7c8;
+
+}
+
+/* ==============================
+SECTION
+============================== */
+
+section{
+
+    margin-bottom:90px;
+
+}
+
+.section-title{
+
+    width:90%;
+
+    max-width:1400px;
+
+    margin:0 auto 35px;
+
+    font-size:2rem;
+
+}
+
+/* ==============================
+GUILD GRID
+============================== */
+
+.guild-grid{
+
+    width:90%;
+
+    max-width:1400px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(320px,1fr));
+
+    gap:30px;
+
+}
+
+/* ==============================
+FOOTER
+============================== */
+
+footer{
+
+    margin-top:80px;
+
+    text-align:center;
+
+    padding:40px;
+
+    color:#8fa1c9;
+
+}
+/* ===================================================
+   PART 2
+   Guild Card Design
+=================================================== */
+
+/* 메뉴 카드 색상 변경 */
+
+.menu-card:nth-child(1){
+    border-color:#35d7ff;
+}
+
+.menu-card:nth-child(2){
+    border-color:#c86eff;
+}
+
+.menu-card:nth-child(3){
+    border-color:#ff9c2c;
+}
+
+.menu-card:nth-child(1):hover{
+    box-shadow:0 0 35px rgba(53,215,255,.45);
+}
+
+.menu-card:nth-child(2):hover{
+    box-shadow:0 0 35px rgba(200,110,255,.45);
+}
+
+.menu-card:nth-child(3):hover{
+    box-shadow:0 0 35px rgba(255,156,44,.45);
+}
+
+
+/* ===================================================
+   Guild Card
+=================================================== */
+
+.guild-card{
+
+    overflow:hidden;
+
+    display:flex;
+
+    flex-direction:column;
+
+    background:linear-gradient(
+        180deg,
+        rgba(10,24,52,.95),
+        rgba(5,13,30,.95)
+    );
+
+    border:2px solid rgba(255,255,255,.08);
+
+    border-radius:26px;
+
+    transition:.35s;
+
+    cursor:pointer;
+
+    position:relative;
+
+}
+
+.guild-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#37d7ff;
+
+    box-shadow:
+        0 0 40px rgba(55,215,255,.25);
+
+}
+
+
+/* ===================================================
+   Guild Image
+=================================================== */
+
+.guild-image{
+
+    width:100%;
+
+    aspect-ratio:16/9;
+
+    overflow:hidden;
+
+    background:#08142f;
+
+}
+
+.guild-image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.45s;
+
+}
+
+.guild-card:hover .guild-image img{
+
+    transform:scale(1.08);
+
+}
+
+
+/* ===================================================
+   Guild Content
+=================================================== */
+
+.guild-content{
+
+    padding:28px;
+
+}
+
+.guild-name{
+
+    font-size:1.6rem;
+
+    font-weight:700;
+
+    margin-bottom:12px;
+
+}
+
+.guild-description{
+
+    color:#c5d3ef;
+
+    line-height:1.8;
+
+    margin-bottom:20px;
+
+}
+
+
+/* ===================================================
+   Guild Info
+=================================================== */
+
+.guild-info{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+    margin-bottom:25px;
+
+}
+
+.guild-info div{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    color:#d7e2fa;
+
+    font-size:.95rem;
+
+}
+
+
+/* ===================================================
+   Badge
+=================================================== */
+
+.badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:fit-content;
+
+    padding:7px 15px;
+
+    border-radius:999px;
+
+    font-size:.85rem;
+
+    font-weight:700;
+
+}
+
+.badge.open{
+
+    background:#1d6f38;
+
+    color:#6fff96;
+
+}
+
+.badge.close{
+
+    background:#5a1f1f;
+
+    color:#ff8a8a;
+
+}
+
+
+/* ===================================================
+   Guild Footer
+=================================================== */
+
+.guild-footer{
+
+    margin-top:auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:22px 28px;
+
+    border-top:1px solid rgba(255,255,255,.06);
+
+}
+
+
+/* ===================================================
+   Join Button
+=================================================== */
+
+.join-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:12px 22px;
+
+    border-radius:12px;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    color:white;
+
+    background:linear-gradient(
+        90deg,
+        #2dc8ff,
+        #2e89ff
+    );
+
+    transition:.25s;
+
+}
+
+.join-btn:hover{
+
+    transform:scale(1.05);
+
+    box-shadow:
+        0 0 20px rgba(45,200,255,.45);
+
+}
+
+
+/* ===================================================
+   Guild Member Count
+=================================================== */
+
+.member-count{
+
+    color:#9eb4df;
+
+    font-size:.9rem;
+
+}
+
+
+/* ===================================================
+   Featured Guild
+=================================================== */
+
+.guild-card.featured{
+
+    border:2px solid #ffb94d;
+
+}
+
+.guild-card.featured::before{
+
+    content:"⭐ 추천 길드";
+
+    position:absolute;
+
+    top:15px;
+
+    left:15px;
+
+    background:#ffb94d;
+
+    color:#222;
+
+    font-size:.75rem;
+
+    font-weight:700;
+
+    padding:6px 12px;
+
+    border-radius:30px;
+
+    z-index:5;
+
+}
+
+
+/* ===================================================
+   Scroll Animation
+=================================================== */
+
+.fade-up{
+
+    opacity:0;
+
+    transform:translateY(30px);
+
+    transition:.8s;
+
+}
+
+.fade-up.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+/* ===================================================
+   Divider
+=================================================== */
+
+.divider{
+
+    width:90%;
+
+    max-width:1400px;
+
+    margin:70px auto;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+}
+/* ===================================================
+   PART 3
+   Responsive Design
+=================================================== */
+
+
+/* 부드러운 스크롤 */
+
+html{
+    scroll-behavior:smooth;
+}
+
+
+/* 이미지 드래그 방지 */
+
+img{
+    user-select:none;
+    -webkit-user-drag:none;
+}
+
+
+/* 모든 버튼 애니메이션 */
+
+button,
+a{
+
+    transition:.25s ease;
+
+}
+
+
+/* ===================================================
+   Large Desktop
+=================================================== */
+
+@media (min-width:1600px){
+
+    .menu-grid,
+    .guild-grid{
+
+        max-width:1600px;
+
+    }
+
+}
+
+
+/* ===================================================
+   Laptop
+=================================================== */
+
+@media (max-width:1200px){
+
+    header h1{
+
+        font-size:2.6rem;
+
+    }
+
+    .menu-card{
+
+        padding:40px 30px;
+
+    }
+
+}
+
+
+/* ===================================================
+   Tablet
+=================================================== */
+
+@media (max-width:992px){
+
+    header{
+
+        padding:50px 20px;
+
+    }
+
+    header h1{
+
+        font-size:2.3rem;
+
+    }
+
+    header p{
+
+        font-size:1rem;
+
+    }
+
+    .section-title{
+
+        font-size:1.8rem;
+
+    }
+
+    .menu-grid{
+
+        gap:25px;
+
+    }
+
+    .guild-grid{
+
+        gap:25px;
+
+    }
+
+}
+
+
+/* ===================================================
+   Mobile
+=================================================== */
+
+@media (max-width:768px){
+
+    header{
+
+        padding:40px 15px;
+
+    }
+
+    header h1{
+
+        font-size:2rem;
+
+        line-height:1.4;
+
+    }
+
+    header p{
+
+        font-size:.95rem;
+
+    }
+
+    .menu-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .guild-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .menu-card{
+
+        padding:35px 25px;
+
+    }
+
+    .menu-card img{
+
+        width:70px;
+
+    }
+
+    .menu-card h2{
+
+        font-size:1.7rem;
+
+    }
+
+    .guild-name{
+
+        font-size:1.35rem;
+
+    }
+
+    .guild-content{
+
+        padding:22px;
+
+    }
+
+    .guild-footer{
+
+        flex-direction:column;
+
+        gap:15px;
+
+        align-items:flex-start;
+
+    }
+
+    .join-btn{
+
+        width:100%;
+
+    }
+
+    .search{
+
+        margin:50px auto;
+
+    }
+
+    .search input{
+
+        padding:16px 20px;
+
+        font-size:.95rem;
+
+    }
+
+}
+
+
+/* ===================================================
+   Small Mobile
+=================================================== */
+
+@media (max-width:480px){
+
+    body{
+
+        overflow-x:hidden;
+
+    }
+
+    header{
+
+        padding:30px 15px;
+
+    }
+
+    header h1{
+
+        font-size:1.7rem;
+
+    }
+
+    header p{
+
+        font-size:.9rem;
+
+    }
+
+    .section-title{
+
+        font-size:1.5rem;
+
+    }
+
+    .menu-card{
+
+        border-radius:20px;
+
+        padding:28px 20px;
+
+    }
+
+    .menu-card h2{
+
+        font-size:1.4rem;
+
+    }
+
+    .menu-card span{
+
+        font-size:.9rem;
+
+    }
+
+    .guild-card{
+
+        border-radius:20px;
+
+    }
+
+    .guild-content{
+
+        padding:18px;
+
+    }
+
+    .guild-name{
+
+        font-size:1.2rem;
+
+    }
+
+    .guild-description{
+
+        font-size:.9rem;
+
+    }
+
+    .guild-info{
+
+        gap:8px;
+
+    }
+
+    .guild-footer{
+
+        padding:18px;
+
+    }
+
+    .join-btn{
+
+        font-size:.9rem;
+
+        padding:12px;
+
+    }
+
+}
+
+
+/* ===================================================
+   Scrollbar
+=================================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#07152d;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#2bc7ff;
+
+    border-radius:30px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#69dfff;
+
+}
+
+
+/* ===================================================
+   Selection Color
+=================================================== */
+
+::selection{
+
+    background:#2bc7ff;
+
+    color:white;
+
+}
+
+
+/* ===================================================
+   Loading Animation
+=================================================== */
+
+@keyframes float{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-6px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.menu-card img{
+
+    animation:float 4s ease-in-out infinite;
+
+}
+
+
+/* ===================================================
+   Fade Animation
+=================================================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+header{
+
+    animation:fadeUp .8s;
+
+}
+
+.menu-card{
+
+    animation:fadeUp 1s;
+
+}
+
+.guild-card{
+
+    animation:fadeUp .8s;
+
+}
+
+
+/* ===================================================
+   Hover Glow
+=================================================== */
+
+.guild-card:hover{
+
+    background:linear-gradient(
+
+        180deg,
+
+        #0d2247,
+
+        #08142f
+
+    );
+
+}
+
+
+/* ===================================================
+   Footer
+=================================================== */
+
+footer{
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+}
