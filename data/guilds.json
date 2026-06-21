@@ -1,0 +1,49 @@
+[
+  {
+    "id": "Kopam",
+
+    "name": "코팸",
+
+    "description": "매일 저녁 활발한 친목 길드",
+
+    "image": "images/guilds/kopam.webp",
+
+    "members": 48,
+
+    "capacity": 50,
+
+    "featured": true,
+
+    "status": "recruit",
+
+    "isHot": true,
+
+    "isNew": true,
+
+    "link": "https://open.kakao.com/o/xxxx"
+  },
+
+  {
+    "id": "guardian",
+
+    "name": "Guardian",
+
+    "description": "뉴비 환영",
+
+    "image": null,
+
+    "members": 35,
+
+    "capacity": 50,
+
+    "featured": false,
+
+    "status": "closed",
+
+    "isHot": false,
+
+    "isNew": false,
+
+    "link": "https://open.kakao.com/o/yyyy"
+  }
+]
