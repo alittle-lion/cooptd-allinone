@@ -1,122 +1,75 @@
-// ===========================================
-// 협동 디펜스 길드 홍보 사이트
-// ===========================================
+// ======================================================
+// Guild Site v1.1.0
+// JSON 기반
+// ======================================================
 
-const guilds = [
+let guilds = [];
 
-    {
-        name: "Knight",
+// 페이지가 열리면 실행
+document.addEventListener("DOMContentLoaded", () => {
 
-        description: "매일 활발하게 플레이하는 친목 길드",
+    loadGuilds();
 
-        image: "images/guild1.jpg",
-
-        members: "48 / 50",
-
-        featured: true,
-
-        ribbons: [
-            "HOT",
-            "NEW",
-            "RANK #1"
-        ],
-
-        link: "https://open.kakao.com/"
-    },
-
-    {
-        name: "Guardian",
-
-        description: "뉴비 환영! 같이 성장하는 길드",
-
-        image: "images/guild2.jpg",
-
-        members: "39 / 50",
-
-        featured: true,
-
-        ribbons: [
-            "모집중"
-        ],
-
-        link: "https://open.kakao.com/"
-    },
-
-    {
-        name: "Legend",
-
-        description: "랭커 중심 공략 길드",
-
-        image: "images/guild3.jpg",
-
-        members: "50 / 50",
-
-        featured: false,
-
-        ribbons: [
-            "BEST",
-            "RANK #2"
-        ],
-
-        link: "https://open.kakao.com/"
-    }
-
-];
-
-// ===============================
-
-const featuredContainer =
-document.getElementById("featuredGuilds");
-
-const guildContainer =
-document.getElementById("guildContainer");
-
-const search =
-document.getElementById("search");
-
-// ===============================
-
-createGuilds(guilds);
-
-// ===============================
-
-search.addEventListener("input", function(){
-
-    const keyword =
-    this.value.toLowerCase();
-
-    const result = guilds.filter(guild =>
-
-        guild.name.toLowerCase().includes(keyword)
-
-    );
-
-    createGuilds(result);
+    document
+        .getElementById("search")
+        .addEventListener("input", searchGuild);
 
 });
 
-// ===============================
 
-function createGuilds(list){
+// ======================================================
+// JSON 불러오기
+// ======================================================
 
-    featuredContainer.innerHTML = "";
+async function loadGuilds() {
 
-    guildContainer.innerHTML = "";
+    try{
 
-    list.forEach(guild=>{
+        const response = await fetch("data/guilds.json");
 
-        const card =
-        createCard(guild);
+        guilds = await response.json();
+
+        renderGuilds(guilds);
+
+    }
+
+    catch(error){
+
+        console.error("guilds.json 로딩 실패");
+
+        console.error(error);
+
+    }
+
+}
+
+
+// ======================================================
+// 카드 출력
+// ======================================================
+
+function renderGuilds(data){
+
+    const featured =
+        document.getElementById("featuredGuilds");
+
+    const normal =
+        document.getElementById("guildContainer");
+
+    featured.innerHTML="";
+    normal.innerHTML="";
+
+    data.forEach(guild=>{
+
+        const card=createGuildCard(guild);
 
         if(guild.featured){
 
-            featuredContainer.appendChild(card);
+            featured.appendChild(card);
 
-        }
+        }else{
 
-        else{
-
-            guildContainer.appendChild(card);
+            normal.appendChild(card);
 
         }
 
@@ -124,64 +77,65 @@ function createGuilds(list){
 
 }
 
-// ===============================
 
-function createCard(guild){
+// ======================================================
+// 카드 생성
+// ======================================================
 
-    const card =
-    document.createElement("div");
+function createGuildCard(guild){
 
-    card.className =
-    "guild-card";
+    const card=document.createElement("div");
 
-    card.innerHTML = `
+    card.className="guild-card";
 
-        <div class="ribbon-container">
+    card.innerHTML=`
 
-            ${createRibbons(guild.ribbons)}
+    <div class="ribbon-container">
 
-        </div>
+        ${createRibbon(guild.ribbons)}
 
-        <div class="guild-image">
+    </div>
 
-            <img src="${guild.image}">
+    <div class="guild-image">
 
-        </div>
+        <img src="${guild.image}" alt="${guild.name}">
 
-        <div class="guild-content">
+    </div>
 
-            <div class="guild-name">
+    <div class="guild-content">
 
-                ${guild.name}
+        <div class="guild-name">
 
-            </div>
-
-            <div class="guild-description">
-
-                ${guild.description}
-
-            </div>
-
-            <div class="guild-info">
-
-                👥 ${guild.members}
-
-            </div>
+            ${guild.name}
 
         </div>
 
-        <div class="guild-footer">
+        <div class="guild-description">
 
-            <a
-                href="${guild.link}"
-                target="_blank"
-                class="join-btn">
-
-                가입하기
-
-            </a>
+            ${guild.description}
 
         </div>
+
+        <div class="guild-info">
+
+            👥 ${guild.members}
+
+        </div>
+
+    </div>
+
+    <div class="guild-footer">
+
+        <a
+            href="${guild.link}"
+            target="_blank"
+            class="join-btn">
+
+            가입하기
+
+        </a>
+
+    </div>
 
     `;
 
@@ -189,52 +143,64 @@ function createCard(guild){
 
 }
 
-// ===============================
 
-function createRibbons(ribbons){
+// ======================================================
+// 리본 생성
+// ======================================================
 
-    let html = "";
+function createRibbon(ribbons){
+
+    if(!ribbons) return "";
+
+    let html="";
 
     ribbons.forEach(text=>{
 
-        let css = "";
+        let css="";
 
-        if(text.includes("HOT"))
+        if(text.startsWith("HOT")) css="hot";
 
-            css="hot";
+        else if(text.startsWith("NEW")) css="new";
 
-        else if(text.includes("NEW"))
+        else if(text.startsWith("RANK")) css="rank";
 
-            css="new";
+        else if(text.startsWith("BEST")) css="best";
 
-        else if(text.includes("RANK"))
+        else if(text.startsWith("모집")) css="recruit";
 
-            css="rank";
+        else css="event";
 
-        else if(text.includes("BEST"))
+        html+=`
 
-            css="best";
+        <div class="ribbon ${css}">
 
-        else if(text.includes("모집"))
+            ${text}
 
-            css="recruit";
-
-        else
-
-            css="event";
-
-        html += `
-
-            <div class="ribbon ${css}">
-
-                ${text}
-
-            </div>
+        </div>
 
         `;
 
     });
 
     return html;
+
+}
+
+
+// ======================================================
+// 검색
+// ======================================================
+
+function searchGuild(){
+
+    const keyword=this.value.toLowerCase();
+
+    const result=guilds.filter(guild=>{
+
+        return guild.name.toLowerCase().includes(keyword);
+
+    });
+
+    renderGuilds(result);
 
 }
