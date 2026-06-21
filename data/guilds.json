@@ -1,12 +1,12 @@
 [
   {
-    "id": "Kopam",
+    "id": "kopam",
 
     "name": "코팸",
 
     "description": "매일 저녁 활발한 친목 길드",
 
-    "image": "images/banners/kopam.webp",
+    "image": "images/icons/kopam.webp",
 
     "members": 48,
 
