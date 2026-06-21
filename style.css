@@ -1,6 +1,5 @@
 /* ==============================
    협동 디펜스 길드 사이트
-   Base Style
 ============================== */
 
 *{
@@ -231,17 +230,15 @@ GUILD GRID
 .guild-grid{
 
     width:90%;
-
-    max-width:1400px;
-
+    max-width:1600px;
     margin:auto;
 
     display:grid;
 
-    grid-template-columns:
-        repeat(auto-fit,minmax(320px,1fr));
+    gap:24px;
 
-    gap:30px;
+    grid-template-columns:
+        repeat(4,1fr);
 
 }
 
@@ -342,7 +339,7 @@ footer{
 
     width:100%;
 
-    aspect-ratio:16/9;
+    aspect-ratio:16/10;
 
     overflow:hidden;
 
@@ -375,13 +372,13 @@ footer{
 
 .guild-content{
 
-    padding:28px;
+    padding:18px;
 
 }
 
 .guild-name{
 
-    font-size:1.6rem;
+    font-size:1.15rem;
 
     font-weight:700;
 
@@ -393,9 +390,9 @@ footer{
 
     color:#c5d3ef;
 
-    line-height:1.8;
+    font-size:.9rem;
 
-    margin-bottom:20px;
+    line-height:1.5;
 
 }
 
@@ -1235,5 +1232,33 @@ footer{
 .ribbon.recruit{
 
     box-shadow:0 0 18px rgba(40,220,120,.45);
+
+}
+/* ===========================
+   추천 길드
+=========================== */
+
+#featuredGuilds{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:24px;
+
+}
+
+
+/* ===========================
+   전체 길드
+=========================== */
+
+#guildContainer{
+
+    display:grid;
+
+    grid-template-columns:repeat(6,1fr);
+
+    gap:20px;
 
 }
