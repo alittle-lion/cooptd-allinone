@@ -65,13 +65,12 @@ header p{
 
 
 /* ==============================
-   CATEGORY BAR (sticky)
+   CATEGORY BAR
 ============================== */
 
 .category-bar{
     width:90%;
     max-width:900px;
-
     margin:10px auto 40px;
 
     display:flex;
@@ -91,10 +90,9 @@ header p{
 
 .category-btn{
     padding:10px 16px;
-
     border-radius:999px;
-    border:1px solid rgba(255,255,255,.15);
 
+    border:1px solid rgba(255,255,255,.15);
     background:rgba(18,42,86,.6);
 
     color:#c9d4ec;
@@ -103,7 +101,6 @@ header p{
     font-weight:600;
 
     cursor:pointer;
-
     transition:.25s;
 
     white-space:nowrap;
@@ -119,7 +116,6 @@ header p{
     background:linear-gradient(90deg,#2dc8ff,#bb72ff);
     color:white;
     border-color:transparent;
-
     box-shadow:0 0 15px rgba(55,215,255,.25);
 }
 
@@ -137,7 +133,7 @@ header p{
 
 
 /* ==============================
-   MENU GRID (🔥 모바일에서도 유지)
+   MENU GRID
 ============================== */
 
 .menu-grid{
@@ -181,7 +177,7 @@ header p{
 
 
 /* ==============================
-   GUILD GRID
+   GUILD GRID (BASE)
 ============================== */
 
 .guild-grid{
@@ -190,13 +186,25 @@ header p{
     margin:auto;
 
     display:grid;
-    grid-template-columns:repeat(4,1fr);
     gap:24px;
 }
 
 
 /* ==============================
-   CARD (fade + 안정화)
+   추천 / 전체 분리 (핵심)
+============================== */
+
+#featuredGuilds{
+    grid-template-columns:repeat(4,1fr);
+}
+
+#guildContainer{
+    grid-template-columns:repeat(6,1fr);
+}
+
+
+/* ==============================
+   CARD
 ============================== */
 
 .guild-card{
@@ -284,7 +292,7 @@ header p{
 
 
 /* ==============================
-   BADGES (깨짐 방지 핵심)
+   BADGES
 ============================== */
 
 .guild-badges{
@@ -292,7 +300,6 @@ header p{
     flex-wrap:wrap;
     gap:6px;
     min-height:28px;
-    align-items:center;
 }
 
 .badge{
@@ -306,7 +313,7 @@ header p{
     border-radius:999px;
     font-weight:700;
 
-    line-height:1; /* 🔥 1~2px 차이 해결 핵심 */
+    line-height:1;
 }
 
 .badge.rank{ background:#d99b00; color:#111; }
@@ -316,7 +323,7 @@ header p{
 
 
 /* ==============================
-   FOOTER (🔥 가입조건 픽셀 문제 해결 핵심)
+   FOOTER (버튼 균형 + 픽셀 해결)
 ============================== */
 
 .guild-footer{
@@ -341,16 +348,16 @@ header p{
     font-size:15px;
     font-weight:700;
 
-    line-height:1; /* 🔥 핵심: 브라우저 차이 제거 */
+    line-height:1;
 
     color:white;
     text-decoration:none;
 
     cursor:pointer;
 
-    box-sizing:border-box;
-
     transition:.2s;
+
+    box-sizing:border-box;
 }
 
 .footer-btn.left{ background:#2dc8ff; }
@@ -408,21 +415,28 @@ header p{
 
 
 /* ==============================
-   RESPONSIVE (🔥 핵심 수정)
+   RESPONSIVE
 ============================== */
 
-/* 태블릿 */
 @media (max-width:1024px){
-    .guild-grid{
+
+    #featuredGuilds{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    #guildContainer{
+        grid-template-columns:repeat(4,1fr);
+    }
+
+    .menu-grid{
         grid-template-columns:repeat(3,1fr);
     }
 }
 
-/* 모바일 - 메뉴 유지 (핵심 요구사항 반영) */
 @media (max-width:768px){
 
     .menu-grid{
-        grid-template-columns:repeat(3,1fr); /* 🔥 데스크탑 느낌 유지 */
+        grid-template-columns:repeat(3,1fr);
         gap:12px;
     }
 
@@ -439,15 +453,19 @@ header p{
         font-size:.75rem;
     }
 
-    .guild-grid{
+    #featuredGuilds{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    #guildContainer{
         grid-template-columns:repeat(2,1fr);
     }
 }
 
-/* 작은 모바일 */
 @media (max-width:480px){
 
-    .guild-grid{
+    #featuredGuilds,
+    #guildContainer{
         grid-template-columns:1fr;
     }
 
