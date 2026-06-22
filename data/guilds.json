@@ -8,7 +8,7 @@
     "capacity": 70,
 
     "category": ["HOT", "closed"],
-    "rank": 1,
+    //* "rank": 1, *//
 
     "leader": "코블린",
     "officers": ["코밍따", "코라보", "코현욤이"],
