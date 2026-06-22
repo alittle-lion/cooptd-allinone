@@ -109,7 +109,7 @@ function createGuildCard(guild) {
 
     const cats = normalizeCategory(guild.category);
 
-    card.innerHTML = 
+    card.innerHTML = `
 
         <div class="guild-image">
 
@@ -137,31 +137,31 @@ function createGuildCard(guild) {
 
             <div class="guild-badges">
 
-                ${guild.rank ? <span class="badge rank">RANK #${guild.rank}</span> : ""}
+                ${guild.rank ? `<span class="badge rank">RANK #${guild.rank}</span>` : ""}
 
                 ${cats.map(cat => {
 
                     switch(cat){
 
                         case "RANK":
-                            return <span class="badge rank">RANK</span>;
+                            return `<span class="badge rank">RANK</span>`;
 
                         case "HOT":
-                            return <span class="badge hot">HOT</span>;
+                            return `<span class="badge hot">HOT</span>`;
 
                         case "NEW":
-                            return <span class="badge new">NEW</span>;
+                            return `<span class="badge new">NEW</span>`;
 
                         case "recruit":
                         case "모집중":
-                            return <span class="badge recruit">모집중</span>;
+                            return `<span class="badge recruit">모집중</span>`;
 
                         case "closed":
                         case "모집중단":
-                            return <span class="badge closed">모집중단</span>;
+                            return `<span class="badge closed">모집중단</span>`;
 
                         default:
-                            return <span class="badge status">${cat}</span>;
+                            return `<span class="badge status">${cat}</span>`;
                     }
 
                 }).join("")}
@@ -189,7 +189,7 @@ function createGuildCard(guild) {
 
         </div>
 
-    ;
+    `;
 
     const btn = card.querySelector(".footer-btn.right");
 
@@ -394,7 +394,7 @@ function openModal(guild) {
     const members = document.getElementById("modalMembers");
     if (members) {
         members.textContent =
-            ${guild.members || 0} / ${guild.capacity || 0};
+            `${guild.members || 0} / ${guild.capacity || 0}`;
     }
 
     // -----------------------------
@@ -479,6 +479,8 @@ function openModal(guild) {
 		}
 
 	}
+
+}
 
 
 // ======================================================
