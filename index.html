@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>협동타워 디펜스 길드 홍보</title>
 
     <link rel="stylesheet" href="style.css">
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -26,6 +33,7 @@
     </p>
 
 </header>
+
 
 
 <!-- ================= MAIN MENU ================= -->
@@ -65,6 +73,7 @@
 </section>
 
 
+
 <!-- ================= SEARCH ================= -->
 
 <section class="search">
@@ -78,52 +87,181 @@
 </section>
 
 
-<!-- ================= CATEGORY FILTER ================= -->
+
+<!-- ================= CATEGORY ================= -->
 
 <section class="category-bar">
 
-    <button class="category-btn active" onclick="filterCategory('ALL')">전체</button>
-    <button class="category-btn" onclick="filterCategory('RANK')">RANK</button>
-    <button class="category-btn" onclick="filterCategory('HOT')">HOT</button>
-    <button class="category-btn" onclick="filterCategory('NEW')">NEW</button>
-    <button class="category-btn" onclick="filterCategory('recruit')">모집중</button>
-    <button class="category-btn" onclick="filterCategory('closed')">모집중단</button>
+    <button
+        class="category-btn active"
+        data-category="ALL"
+        onclick="filterCategory('ALL', this)">
+        전체
+    </button>
+
+    <button
+        class="category-btn"
+        data-category="RANK"
+        onclick="filterCategory('RANK', this)">
+        RANK
+    </button>
+
+    <button
+        class="category-btn"
+        data-category="HOT"
+        onclick="filterCategory('HOT', this)">
+        HOT
+    </button>
+
+    <button
+        class="category-btn"
+        data-category="NEW"
+        onclick="filterCategory('NEW', this)">
+        NEW
+    </button>
+
+    <button
+        class="category-btn"
+        data-category="recruit"
+        onclick="filterCategory('recruit', this)">
+        모집중
+    </button>
+
+    <button
+        class="category-btn"
+        data-category="closed"
+        onclick="filterCategory('closed', this)">
+        모집중단
+    </button>
 
 </section>
+
 
 
 <!-- ================= 추천 길드 ================= -->
 
 <section>
 
-    <h2 class="section-title">🔥 추천 길드</h2>
+    <h2 class="section-title">
+        🔥 추천 길드
+    </h2>
 
-    <div id="featuredGuilds" class="guild-grid"></div>
+    <div
+        id="featuredGuilds"
+        class="guild-grid">
+    </div>
 
 </section>
+
 
 
 <!-- ================= 전체 길드 ================= -->
 
 <section>
 
-    <h2 class="section-title">⭐ 전체 길드</h2>
+    <h2 class="section-title">
+        ⭐ 전체 길드
+    </h2>
 
-    <div id="guildContainer" class="guild-grid"></div>
+    <div
+        id="guildContainer"
+        class="guild-grid">
+    </div>
 
 </section>
+
 
 
 <!-- ================= FOOTER ================= -->
 
 <footer>
 
-    <p>© 2026 협동 디펜스 길드 홍보 사이트</p>
+    <p>
+        © 2026 협동 디펜스 길드 홍보 사이트
+    </p>
 
 </footer>
+
+
+
+<!-- ================= GUILD MODAL ================= -->
+
+<div id="guildModal" class="modal">
+
+    <div class="modal-content">
+
+        <img
+            id="modalBanner"
+            class="modal-banner"
+            src=""
+            alt="길드 배너">
+
+        <h2 id="modalName"></h2>
+
+        <p id="modalDescription"></p>
+
+        <div class="modal-info">
+
+            <p>
+
+                <strong>길드장</strong>
+
+                <br>
+
+                <span id="modalLeader"></span>
+
+            </p>
+
+            <p>
+
+                <strong>현재 인원</strong>
+
+                <br>
+
+                <span id="modalMembers"></span>
+
+            </p>
+
+            <p>
+
+                <strong>운영진</strong>
+
+                <br>
+
+                <span id="modalManagers"></span>
+
+            </p>
+
+            <p>
+
+                <strong>가입조건</strong>
+
+                <br>
+
+                <span id="modalCondition"></span>
+
+            </p>
+
+        </div>
+
+        <a
+            id="modalLink"
+            class="footer-btn left"
+            href="#"
+            target="_blank">
+
+            문의하기
+
+        </a>
+
+    </div>
+
+</div>
+
 
 
 <script src="script.js"></script>
 
 </body>
+
 </html>
