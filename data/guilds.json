@@ -4,10 +4,10 @@
     "image": "images/test/kopam1.webp",
     "banner": "images/banners/kopam.webp",
     "description": "협동타워디펜스 No.1 코팸입니다!",
-    "members": 45,
-    "capacity": 100,
+    "members": 70,
+    "capacity": 70,
 
-    "category": ["HOT", "recruit"],
+    "category": ["HOT", "closed"],
     "rank": 1,
 
     "leader": "코블린",
