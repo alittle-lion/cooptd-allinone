@@ -2,12 +2,12 @@
   {
     "name": "kopam",
     "image": "images/test/kopam1.webp",
-    "banner": "images/banner/kopam.webp",
+    "banner": "images/banners/kopam.webp",
     "description": "상위권 길드입니다.",
     "members": 45,
     "capacity": 100,
 
-    "category": ["HOT", "RANK", "recruit"],
+    "category": ["HOT", "recruit"],
     "rank": 1,
 
     "leader": "코블린",
