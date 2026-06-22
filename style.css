@@ -1,5 +1,5 @@
 /* ==============================
-   GLOBAL
+   RESET / BASE
 ============================== */
 
 *{
@@ -11,20 +11,11 @@
 :root{
     --bg:#07152d;
     --bg2:#10254c;
-    --card:#0b1d3d;
-
     --text:#ffffff;
     --sub:#c9d4ec;
 
     --cyan:#37d7ff;
-    --purple:#bb72ff;
-    --green:#55ff8a;
-    --orange:#ffb44c;
 }
-
-/* ==============================
-   BODY
-============================== */
 
 body{
     font-family:"Pretendard",sans-serif;
@@ -83,7 +74,41 @@ header p{
 }
 
 /* ==============================
-   GRID
+   MENU (상단 버튼)
+============================== */
+
+.menu-grid{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.menu-card{
+    background:linear-gradient(180deg,rgba(7,22,52,.9),rgba(4,13,32,.95));
+    border:2px solid rgba(55,215,255,.45);
+
+    border-radius:20px;
+    padding:22px 15px;
+
+    text-align:center;
+    color:white;
+    text-decoration:none;
+
+    transition:.25s;
+}
+
+.menu-card:hover{
+    transform:translateY(-6px);
+    border-color:var(--cyan);
+    box-shadow:0 0 25px rgba(55,215,255,.35);
+}
+
+/* ==============================
+   GUILD GRID
 ============================== */
 
 .guild-grid{
@@ -109,13 +134,15 @@ header p{
     overflow:hidden;
 
     border:1px solid rgba(255,255,255,.08);
-
     transition:.3s;
 }
 
 .guild-card:hover{
-    transform:translateY(-6px);
+    transform:translateY(-8px);
     border-color:var(--cyan);
+    box-shadow:
+        0 0 15px rgba(55,215,255,.25),
+        0 0 40px rgba(55,215,255,.15);
 }
 
 /* ==============================
@@ -192,12 +219,12 @@ header p{
 
 .badge.hot{
     background:#ff3b3b;
-    color:white;
+    color:#fff;
 }
 
 .badge.new{
     background:#2d7dff;
-    color:white;
+    color:#fff;
 }
 
 .badge.status{
@@ -206,7 +233,7 @@ header p{
 }
 
 /* ==============================
-   FOOTER (핵심)
+   FOOTER BUTTONS
 ============================== */
 
 .guild-footer{
@@ -214,32 +241,33 @@ header p{
     border-top:1px solid rgba(255,255,255,.08);
 }
 
-/* 버튼 공통 */
 .footer-btn{
     flex:1;
     padding:14px 0;
     text-align:center;
+
     font-weight:700;
-    cursor:pointer;
-    border:none;
-    text-decoration:none;
     color:white;
+    text-decoration:none;
+
+    cursor:pointer;
     transition:.2s;
 }
 
-/* 왼쪽 */
 .footer-btn.left{
     background:#2dc8ff;
 }
 
-/* 오른쪽 */
 .footer-btn.right{
     background:#bb72ff;
 }
 
-/* hover */
 .footer-btn:hover{
     filter:brightness(1.1);
+}
+
+.footer-btn:active{
+    transform:scale(0.96);
 }
 
 /* ==============================
@@ -249,50 +277,39 @@ header p{
 .modal{
     position:fixed;
     inset:0;
+
     background:rgba(0,0,0,.75);
 
     display:flex;
     justify-content:center;
     align-items:center;
 
+    opacity:0;
+    visibility:hidden;
+
+    transition:.25s;
     z-index:9999;
 }
 
-.modal.hidden{
-    display:none;
+.modal.show{
+    opacity:1;
+    visibility:visible;
 }
 
 .modal-content{
     width:90%;
     max-width:520px;
+
     background:#0b1d3d;
     border-radius:16px;
     padding:20px;
 
-    color:white;
+    transform:translateY(40px);
+    transition:.3s;
 }
 
-.modal-content img{
-    width:100%;
-    border-radius:12px;
-    margin-bottom:10px;
-}
-
-.modal-content h2{
-    margin-bottom:10px;
-}
-
-.modal-content p{
-    color:#c9d4ec;
-    margin-bottom:6px;
-}
-
-.modal .close{
-    position:absolute;
-    right:20px;
-    top:15px;
-    font-size:26px;
-    cursor:pointer;
+.modal.show .modal-content{
+    transform:translateY(0);
 }
 
 /* ==============================
@@ -306,6 +323,10 @@ header p{
 }
 
 @media (max-width:768px){
+    .menu-grid{
+        grid-template-columns:1fr;
+    }
+
     .guild-grid{
         grid-template-columns:repeat(2,1fr);
     }
