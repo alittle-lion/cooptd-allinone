@@ -635,17 +635,17 @@ header p{
 ========================================== */
 
 .close-btn{
-
     position:absolute;
 
     top:18px;
     right:18px;
 
+    z-index:10001;
+
     width:42px;
     height:42px;
 
     border:none;
-
     border-radius:50%;
 
     background:#233f74;
