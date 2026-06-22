@@ -1,8 +1,10 @@
 // ======================================================
-// Guild Site v2.0 (Refactored)
+// Guild Site v2.0 (Refactored + UI Fix)
 // ======================================================
 
 let guilds = [];
+let currentCategory = "ALL";
+let currentKeyword = "";
 
 // -----------------------------
 // 초기 로드
@@ -21,6 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 closeModal();
             }
         });
+
+    // 기본 카테고리 active (전체)
+    setActiveCategory(document.querySelector(".category-btn"));
 });
 
 
@@ -33,7 +38,7 @@ async function loadGuilds() {
         const response = await fetch("data/guilds.json");
         guilds = await response.json();
 
-        renderGuilds(guilds);
+        applyFilters();
 
     } catch (error) {
         console.error("guilds.json 로딩 실패", error);
@@ -41,9 +46,9 @@ async function loadGuilds() {
 }
 
 
-// -----------------------------
-// 렌더링 (HOT = 추천)
-// -----------------------------
+// ======================================================
+// 렌더링
+// ======================================================
 function renderGuilds(data) {
 
     const featured = document.getElementById("featuredGuilds");
@@ -65,40 +70,33 @@ function renderGuilds(data) {
 }
 
 
-// -----------------------------
-// 카드 생성 (최종 구조)
-// -----------------------------
+// ======================================================
+// 카드 생성
+// ======================================================
 function createGuildCard(guild) {
 
     const card = document.createElement("div");
     card.className = "guild-card";
 
     card.innerHTML = `
-        <!-- 이미지 -->
         <div class="guild-image">
             <img src="${guild.image}" alt="${guild.name}">
         </div>
 
-        <!-- 콘텐츠 -->
         <div class="guild-content">
 
-            <!-- 이름 + 인원 -->
             <div class="guild-top-row">
-                <div class="guild-name">
-                    ${guild.name}
-                </div>
+                <div class="guild-name">${guild.name}</div>
 
                 <div class="guild-member">
                     👥 ${guild.members} / ${guild.capacity}
                 </div>
             </div>
 
-            <!-- 설명 -->
             <div class="guild-description">
                 ${guild.description}
             </div>
 
-            <!-- 배지 -->
             <div class="guild-badges">
 
                 ${guild.rank ? `<span class="badge rank">RANK #${guild.rank}</span>` : ""}
@@ -113,7 +111,6 @@ function createGuildCard(guild) {
 
         </div>
 
-        <!-- 하단 버튼 -->
         <div class="guild-footer">
 
             <a href="${guild.link}" target="_blank" class="footer-btn left">
@@ -132,40 +129,68 @@ function createGuildCard(guild) {
 }
 
 
-// -----------------------------
-// 검색 (길드명 + 운영진)
-// -----------------------------
+// ======================================================
+// 검색
+// ======================================================
 function searchGuild() {
 
-    const keyword = this.value.toLowerCase().trim();
+    currentKeyword = this.value.toLowerCase().trim();
 
-    const result = guilds.filter(guild => {
+    applyFilters();
+}
 
-        return (
-            guild.name.toLowerCase().includes(keyword) ||
-            (guild.leader && guild.leader.toLowerCase().includes(keyword))
+
+// ======================================================
+// 카테고리 필터 (핵심 수정)
+// ======================================================
+function filterCategory(category, el) {
+
+    currentCategory = category;
+
+    setActiveCategory(el);
+
+    applyFilters();
+}
+
+
+// ======================================================
+// 필터 통합 (검색 + 카테고리)
+// ======================================================
+function applyFilters() {
+
+    let result = guilds;
+
+    // 카테고리 필터
+    if (currentCategory !== "ALL") {
+        result = result.filter(guild =>
+            guild.category === currentCategory
         );
-    });
+    }
+
+    // 검색 필터
+    if (currentKeyword) {
+        result = result.filter(guild =>
+            guild.name.toLowerCase().includes(currentKeyword) ||
+            (guild.leader && guild.leader.toLowerCase().includes(currentKeyword))
+        );
+    }
 
     renderGuilds(result);
 }
 
 
-// -----------------------------
-// 카테고리 필터
-// -----------------------------
-function filterCategory(category) {
+// ======================================================
+// ACTIVE UI 관리
+// ======================================================
+function setActiveCategory(activeBtn) {
 
-    if (category === "ALL") {
-        renderGuilds(guilds);
-        return;
+    const buttons = document.querySelectorAll(".category-btn");
+
+    buttons.forEach(btn => btn.classList.remove("active"));
+
+    if (activeBtn) {
+        activeBtn.classList.add("active");
     }
-
-    const filtered = guilds.filter(guild =>
-        guild.category === category
-    );
-
-    renderGuilds(filtered);
 }
 
 
@@ -173,10 +198,7 @@ function filterCategory(category) {
 // MODAL
 // ======================================================
 
-
-// -----------------------------
-// 모달 열기
-// -----------------------------
+// 열기
 function openModal(guild) {
 
     const modal = document.getElementById("guildModal");
@@ -205,10 +227,7 @@ function openModal(guild) {
         guild.link;
 }
 
-
-// -----------------------------
-// 모달 닫기
-// -----------------------------
+// 닫기
 function closeModal() {
     document.getElementById("guildModal").classList.add("hidden");
 }
