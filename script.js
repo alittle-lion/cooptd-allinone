@@ -109,15 +109,36 @@ function createGuildCard(guild) {
                 ${guild.description || ""}
             </div>
 
-            <div class="guild-badges">
+			<div class="guild-badges">
 
-                ${guild.rank ? `<span class="badge rank">RANK #${guild.rank}</span>` : ""}
+				${guild.rank ? `<span class="badge rank">RANK #${guild.rank}</span>` : ""}
 
-                ${cats.map(cat =>
-                    `<span class="badge status">${cat}</span>`
-                ).join("")}
+				${cats.map(cat => {
 
-            </div>
+					if (cat === "RANK") {
+						return `<span class="badge rank">${cat}</span>`;
+					}	
+
+					if (cat === "HOT") {
+						return `<span class="badge hot">${cat}</span>`;
+					}
+
+					if (cat === "NEW") {
+						return `<span class="badge new">${cat}</span>`;
+					}
+
+					if (cat === "모집중") {
+						return `<span class="badge recruit">${cat}</span>`;
+					}
+	
+					if (cat === "모집중단") {
+						return `<span class="badge closed">${cat}</span>`;
+					}
+
+					return `<span class="badge status">${cat}</span>`;
+				}).join("")}
+
+			</div>
 
         </div>
 
