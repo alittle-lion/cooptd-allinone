@@ -8,6 +8,27 @@
     box-sizing:border-box;
 }
 
+/* ==============================
+   CLICKABLE ELEMENTS
+   (드래그/길게누르기 시 파란 선택 표시 방지)
+============================== */
+
+button,
+a,
+.category-btn,
+.menu-card,
+.footer-btn,
+.close-btn,
+.modal-link{
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    user-select:none;
+
+    -webkit-tap-highlight-color:transparent;
+
+    -webkit-touch-callout:none;
+}
+
 :root{
     --bg:#07152d;
     --bg2:#10254c;
