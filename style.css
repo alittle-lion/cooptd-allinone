@@ -629,6 +629,8 @@ header p{
     top:18px;
     right:18px;
 
+    z-index:9999;
+   
     width:42px;
     height:42px;
 
