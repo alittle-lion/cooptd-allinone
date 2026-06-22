@@ -10,7 +10,6 @@
 
 /* ==============================
    CLICKABLE ELEMENTS
-   (드래그/길게누르기 시 파란 선택 표시 방지)
 ============================== */
 
 button,
@@ -533,7 +532,8 @@ footer{
     opacity:0;
     visibility:hidden;
 
-    transition:.25s ease;
+    transition:opacity .25s ease, visibility .25s ease;
+    will-change:opacity;
 
     z-index:99999;
 }
@@ -571,7 +571,8 @@ footer{
 
     transform:translateY(40px) scale(.96);
 
-    transition:.3s ease;
+    transition:transform .3s ease;
+    will-change:transform;
 }
 
 .modal.show .modal-content{
@@ -686,7 +687,7 @@ footer{
 
     cursor:pointer;
 
-    transition:.2s;
+    transition:background .2s, transform .2s;
 }
 
 .close-btn:hover{
