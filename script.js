@@ -144,7 +144,7 @@ function createGuildCard(guild) {
                     switch(cat){
 
                         case "RANK":
-                            return `<span class="badge rank">RANK</span>`;
+                            return guild.rank ? "" : `<span class="badge rank">RANK</span>`;
 
                         case "HOT":
                             return `<span class="badge hot">HOT</span>`;
@@ -252,8 +252,8 @@ function applyFilters() {
             switch (currentCategory) {
 
                 case "RANK":
-                    // rank 값이 있으면 RANK로 인식
-                    return guild.rank != null;
+                    // rank 값이 있거나 category에 RANK가 있으면 RANK로 인식
+                    return guild.rank != null || cats.includes("RANK");
 
                 case "recruit":
                     // recruit 또는 모집중 둘 다 허용
