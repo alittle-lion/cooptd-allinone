@@ -1,9 +1,9 @@
 [
   {
-    "name": "kopam",
+    "name": "코팸",
     "image": "images/test/kopam1.webp",
     "banner": "images/banners/kopam.webp",
-    "description": "상위권 길드입니다.",
+    "description": "협동타워디펜스 No.1 코팸입니다!",
     "members": 45,
     "capacity": 100,
 
