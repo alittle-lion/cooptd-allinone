@@ -325,7 +325,8 @@ function openModal(guild) {
 
     // 모달 표시
     modal.classList.add("show");
-
+    document.body.style.overflow = "hidden";
+	
     // -----------------------------
     // 배너
     // -----------------------------
@@ -464,9 +465,7 @@ function closeModal() {
 
     modal.classList.remove("show");
 
+    // 뒤 화면 스크롤 복원
+    document.body.style.overflow = "";
+
 }
-
-
-// ======================================================
-// END
-// ======================================================
