@@ -1,51 +1,49 @@
 [
   {
-    "id": "kopam",
+    "id": kopam,
 
     "name": "코팸",
-
-    "description": "매일 저녁 활발한 친목 길드",
+    "description": "협동타워디펜스 No.1 코팸입니다.",
 
     "image": "images/test/kopam1.webp",
+    "banner": "images/banner/kopam.webp",
 
-    "members": 48,
+    "leader": "길드장닉네임",
+    "officers": ["운영진1", "운영진2", "운영진3"],
 
-    "capacity": 50,
+    "members": 99,
+    "capacity": 100,
 
-    "featured": true,
+    "category": ["HOT", "모집중"],
 
-    "status": "recruit",
-
-    "isHot": true,
-
-    "isNew": true,
-    
     "rank": 1,
-    
+
+    "condition": "레벨 50 이상 / 디스코드 필수 / 매일 접속",
+
     "link": "https://open.kakao.com/me/Coblin"
   },
 
   {
-    "id": "guardian",
+    "id": 2,
 
-    "name": "Guardian",
+    "name": "협동타워 2길드",
+    "description": "랭커 중심 / 경쟁 콘텐츠 중심 길드",
 
-    "description": "뉴비 환영",
+    "image": "images/guild2.jpg",
+    "banner": "images/banner2.jpg",
 
-    "image": null,
+    "leader": "마스터닉",
+    "officers": ["부마스터1"],
 
-    "members": 35,
+    "members": 30,
+    "capacity": 40,
 
-    "capacity": 50,
+    "category": ["NEW"],
 
-    "featured": false,
+    "rank": 5,
 
-    "status": "closed",
+    "condition": "레벨 70 이상 / 활동 필수",
 
-    "isHot": false,
-
-    "isNew": false,
-
-    "link": "https://open.kakao.com/o/yyyy"
+    "link": "https://open.kakao.com/o/example2"
   }
 ]
