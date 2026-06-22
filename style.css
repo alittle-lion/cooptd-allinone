@@ -13,7 +13,6 @@
     --bg2:#10254c;
     --text:#ffffff;
     --sub:#c9d4ec;
-
     --cyan:#37d7ff;
 }
 
@@ -74,7 +73,7 @@ header p{
 }
 
 /* ==============================
-   MENU (상단 버튼)
+   MENU GRID (6버튼 문제 해결)
 ============================== */
 
 .menu-grid{
@@ -84,14 +83,23 @@ header p{
 
     display:grid;
     grid-template-columns:repeat(3,1fr);
+
     gap:20px;
+    align-items:stretch; /* 🔥 핵심 */
 }
 
 .menu-card{
+    min-height:120px; /* 🔥 버튼 크기 고정 */
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
     background:linear-gradient(180deg,rgba(7,22,52,.9),rgba(4,13,32,.95));
     border:2px solid rgba(55,215,255,.45);
 
     border-radius:20px;
+
     padding:22px 15px;
 
     text-align:center;
@@ -134,6 +142,7 @@ header p{
     overflow:hidden;
 
     border:1px solid rgba(255,255,255,.08);
+
     transition:.3s;
 }
 
@@ -167,6 +176,10 @@ header p{
 
 .guild-content{
     padding:16px 18px;
+
+    display:flex;
+    flex-direction:column;
+    gap:6px;
 }
 
 /* 이름 + 인원 */
@@ -174,7 +187,6 @@ header p{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    margin-bottom:8px;
 }
 
 .guild-name{
@@ -192,20 +204,28 @@ header p{
     font-size:.9rem;
     color:#c5d3ef;
     line-height:1.4;
-    margin-bottom:10px;
 }
 
 /* ==============================
-   BADGES
+   BADGES (검색 깨짐 해결)
 ============================== */
 
 .guild-badges{
     display:flex;
     flex-wrap:wrap;
+
     gap:6px;
+
+    min-height:28px; /* 🔥 높이 고정 */
+    align-items:center;
 }
 
 .badge{
+    display:inline-flex;
+    align-items:center;
+
+    white-space:nowrap; /* 🔥 줄바꿈 방지 */
+
     font-size:.75rem;
     padding:4px 10px;
     border-radius:999px;
@@ -233,7 +253,7 @@ header p{
 }
 
 /* ==============================
-   FOOTER BUTTONS
+   FOOTER (버튼 균형 해결)
 ============================== */
 
 .guild-footer{
@@ -243,14 +263,21 @@ header p{
 
 .footer-btn{
     flex:1;
-    padding:14px 0;
-    text-align:center;
 
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    height:48px; /* 🔥 완전 동일 크기 */
+
+    font-size:0.95rem;
     font-weight:700;
+
     color:white;
     text-decoration:none;
 
     cursor:pointer;
+
     transition:.2s;
 }
 
@@ -271,13 +298,12 @@ header p{
 }
 
 /* ==============================
-   MODAL
+   MODAL (기본 유지)
 ============================== */
 
 .modal{
     position:fixed;
     inset:0;
-
     background:rgba(0,0,0,.75);
 
     display:flex;
