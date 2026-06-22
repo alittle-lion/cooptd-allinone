@@ -259,17 +259,42 @@ function openModal(guild) {
     document.getElementById("modalName").textContent =
         guild.name || "";
 
-    document.getElementById("modalDescription").textContent =
-        guild.description || "";
-
     document.getElementById("modalLeader").textContent =
         guild.leader || "미등록";
+
+    document.getElementById("modalManager").textContent =
+        guild.manager || "미등록";
 
     document.getElementById("modalMembers").textContent =
         `${guild.members || 0} / ${guild.capacity || 0}`;
 
-    document.getElementById("modalCondition").textContent =
-        guild.condition || "조건 없음";
+    document.getElementById("modalStatus").textContent =
+        guild.status || "미정";
+
+    // 가입조건 출력
+    const condition = document.getElementById("modalCondition");
+    condition.innerHTML = "";
+
+    if (Array.isArray(guild.condition)) {
+
+        guild.condition.forEach(item => {
+
+            const li = document.createElement("li");
+            li.textContent = item;
+            condition.appendChild(li);
+
+        });
+
+    } else {
+
+        const li = document.createElement("li");
+        li.textContent = guild.condition || "조건 없음";
+        condition.appendChild(li);
+
+    }
+
+    document.getElementById("modalLink").href =
+        guild.link || "#";
 }
 
 
