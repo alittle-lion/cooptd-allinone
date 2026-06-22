@@ -1,0 +1,545 @@
+/* ==============================
+   RESET / BASE
+============================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --bg:#07152d;
+    --bg2:#10254c;
+    --text:#ffffff;
+    --sub:#c9d4ec;
+    --cyan:#37d7ff;
+
+    /* Z-INDEX SYSTEM */
+    --z-header:100;
+    --z-dropdown:500;
+    --z-modal:1000;
+}
+
+body{
+    font-family:"Pretendard",sans-serif;
+    color:var(--text);
+    background:linear-gradient(90deg,var(--bg),var(--bg2));
+    min-height:100vh;
+}
+
+/* ==============================
+   HEADER
+============================== */
+
+header{
+    text-align:center;
+    padding:60px 20px;
+}
+
+header h1{
+    font-size:3rem;
+    font-weight:800;
+}
+
+header p{
+    color:var(--sub);
+}
+
+/* ==============================
+   SEARCH
+============================== */
+
+.search{
+    width:90%;
+    max-width:900px;
+    margin:50px auto 20px;
+}
+
+.search input{
+    width:100%;
+    padding:16px 20px;
+    border-radius:50px;
+    border:none;
+    outline:none;
+    background:#122a56;
+    color:white;
+}
+
+/* ==============================
+   CATEGORY BAR
+============================== */
+
+.category-bar{
+    width:90%;
+    max-width:900px;
+    margin:10px auto 40px;
+
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+
+    position:sticky;
+    top:0;
+    z-index:var(--z-header);
+
+    background: rgba(7, 21, 45, 0.95);
+
+    padding:10px 0;
+}
+
+.category-btn{
+    padding:10px 16px;
+    border-radius:999px;
+
+    border:1px solid rgba(255,255,255,.15);
+    background:rgba(18,42,86,.6);
+
+    color:#c9d4ec;
+
+    font-size:.85rem;
+    font-weight:600;
+
+    cursor:pointer;
+    transition: all .25s ease;
+
+    white-space:nowrap;
+}
+
+.category-btn:hover{
+    transform:translateY(-2px);
+    border-color:#37d7ff;
+    color:white;
+}
+
+.category-btn.active{
+    background:linear-gradient(90deg,#2dc8ff,#bb72ff);
+    color:white;
+    border-color:transparent;
+    box-shadow:0 0 15px rgba(55,215,255,.25);
+}
+
+/* ==============================
+   MENU GRID
+============================== */
+
+.menu-grid{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.menu-card{
+    min-height:120px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
+    background:linear-gradient(180deg,rgba(7,22,52,.9),rgba(4,13,32,.95));
+    border:2px solid rgba(55,215,255,.45);
+
+    border-radius:20px;
+    padding:22px 15px;
+
+    text-align:center;
+    color:white;
+    text-decoration:none;
+
+    transition:.25s;
+}
+
+.menu-card:hover{
+    transform:translateY(-6px);
+    border-color:var(--cyan);
+    box-shadow:0 0 25px rgba(55,215,255,.35);
+}
+
+/* ==============================
+   RESPONSIVE MENU GRID (FIXED)
+============================== */
+
+@media (max-width:1024px){
+    .menu-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media (max-width:480px){
+    .menu-grid{
+        grid-template-columns:1fr;
+    }
+}
+/* ==============================
+   GUILD GRID (FIXED AUTO FIT)
+============================== */
+
+.guild-grid{
+    width:90%;
+    max-width:1600px;
+    margin:auto;
+    display:grid;
+    gap:24px;
+}
+
+#featuredGuilds{
+    grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+}
+
+#guildContainer{
+    grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));
+}
+
+/* ==============================
+   CARD
+============================== */
+
+.guild-card{
+    display:flex;
+    flex-direction:column;
+
+    background:linear-gradient(180deg,rgba(10,24,52,.95),rgba(5,13,30,.95));
+    border-radius:24px;
+    overflow:hidden;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.3s;
+
+    opacity:0;
+    transform:translateY(20px);
+    animation:fadeInUp .35s ease forwards;
+
+    will-change: transform, opacity;
+}
+
+@keyframes fadeInUp{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.guild-card:hover{
+    transform:translateY(-8px);
+    border-color:var(--cyan);
+    box-shadow:0 0 25px rgba(55,215,255,.25);
+}
+
+/* ==============================
+   IMAGE
+============================== */
+
+.guild-image{
+    width:100%;
+    aspect-ratio:16/10;
+    background:#08142f;
+}
+
+.guild-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* ==============================
+   CONTENT
+============================== */
+
+.guild-content{
+    padding:16px 18px;
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+}
+
+.guild-top-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.guild-name{
+    font-size:1.1rem;
+    font-weight:700;
+}
+
+.guild-member{
+    font-size:.85rem;
+    color:#9eb4df;
+}
+
+.guild-description{
+    font-size:.9rem;
+    color:#c5d3ef;
+    line-height:1.4;
+}
+
+/* ==============================
+   BADGES
+============================== */
+
+.guild-badges{
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px;
+    min-height:28px;
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    white-space:nowrap;
+
+    font-size:.75rem;
+    padding:4px 10px;
+    border-radius:999px;
+    font-weight:700;
+}
+
+/* BADGES */
+.badge.rank{ background:#d4a300; color:#1a1a1a; }
+.badge.hot{ background:#ff3b3b; color:#fff; }
+.badge.new{ background:#6CFF7A; color:#0b1d0f; }
+.badge.recruit,
+.badge.open{ background:#2d7dff; color:#fff; }
+.badge.closed{ background:#6b7280; color:#fff; }
+
+/* ==============================
+   FOOTER BUTTONS
+============================== */
+
+.footer-btn{
+    flex:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    height:50px;
+
+    font-size:15px;
+    font-weight:700;
+
+    color:white;
+    text-decoration:none;
+
+    cursor:pointer;
+    transition:.2s;
+}
+
+.footer-btn.left{ background:#2dc8ff; }
+.footer-btn.right{ background:#bb72ff; }
+
+.footer-btn:hover{ filter:brightness(1.1); }
+.footer-btn:active{ transform:scale(0.96); }
+
+/* ==============================
+   MODAL (FIXED SINGLE VERSION)
+============================== */
+
+.modal{
+    position:fixed;
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:rgba(0,0,0,.72);
+    backdrop-filter:blur(8px);
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:.25s ease;
+
+    z-index:var(--z-modal);
+}
+
+.modal.show{
+    opacity:1;
+    visibility:visible;
+}
+
+.modal-content{
+    width:92%;
+    max-width:900px;
+
+    background:linear-gradient(180deg,#10254c 0%, #081730 100%);
+
+    border:2px solid rgba(55,215,255,.25);
+    border-radius:24px;
+
+    overflow:hidden;
+
+    box-shadow:0 0 35px rgba(55,215,255,.18), 0 15px 50px rgba(0,0,0,.55);
+
+    transform:translateY(40px) scale(.96);
+    transition:.3s ease;
+}
+
+.modal.show .modal-content{
+    transform:translateY(0) scale(1);
+}
+
+/* ==============================
+   MODAL LAYOUT
+============================== */
+
+.modal-top{
+    display:flex;
+    gap:28px;
+    padding:28px;
+}
+
+.modal-banner{
+    width:300px;
+    flex-shrink:0;
+    border-radius:18px;
+    overflow:hidden;
+    background:#08142f;
+}
+
+.modal-banner img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.modal-info{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+}
+
+.modal-title{
+    font-size:34px;
+    font-weight:800;
+    margin-bottom:25px;
+}
+
+/* ==============================
+   CLOSE BUTTON
+============================== */
+
+.close-btn{
+    position:absolute;
+    top:18px;
+    right:18px;
+
+    width:42px;
+    height:42px;
+
+    border:none;
+    border-radius:50%;
+
+    background:#233f74;
+    color:white;
+
+    font-size:22px;
+
+    cursor:pointer;
+    transition:.2s;
+}
+
+.close-btn:hover{
+    background:#37d7ff;
+    transform:rotate(90deg);
+}
+
+/* ==============================
+   MODAL GRID
+============================== */
+
+.modal-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+
+/* ==============================
+   CONDITION BOX
+============================== */
+
+.condition-box{
+    margin-top:20px;
+    padding:20px;
+
+    background:rgba(255,255,255,.04);
+    border-radius:18px;
+    border:1px solid rgba(255,255,255,.08);
+}
+
+/* ==============================
+   MODAL FOOTER LINK (FIXED JS COMPAT)
+============================== */
+
+.modal-footer{
+    margin-top:25px;
+    display:flex;
+    justify-content:flex-end;
+}
+
+.modal-link{
+    padding:14px 34px;
+    border-radius:12px;
+
+    background:linear-gradient(90deg,#2dc8ff,#53e0ff);
+    color:white;
+
+    font-weight:700;
+    text-decoration:none;
+
+    transition:.2s;
+}
+
+.modal-link:hover{
+    transform:translateY(-2px);
+    box-shadow:0 0 20px rgba(45,200,255,.35);
+}
+
+/* DISABLED STATE (JS FIX용) */
+.modal-link.disabled{
+    opacity:0.5;
+    pointer-events:none;
+    filter:grayscale(1);
+}
+
+/* ==============================
+   MOBILE FIX
+============================== */
+
+@media (max-width:900px){
+
+    .modal-top{
+        flex-direction:column;
+    }
+
+    .modal-banner{
+        width:100%;
+    }
+
+    .modal-grid{
+        grid-template-columns:1fr;
+    }
+
+    .modal-title{
+        font-size:28px;
+    }
+
+    .modal-footer{
+        justify-content:center;
+    }
+
+    .modal-link{
+        width:100%;
+        text-align:center;
+    }
+}
