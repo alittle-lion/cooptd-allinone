@@ -52,7 +52,7 @@ async function loadGuilds() {
 
     try {
 
-        const response = await fetch("data/guilds.json");
+        const response = await fetch("./data/guilds.json");
 
         guilds = await response.json();
 
