@@ -11,33 +11,50 @@
     "rank": 1,
 
     "leader": "코블린",
-    "officers": ["코리하", "ViceB"],
+    "officers": ["코밍따", "코라보", "코현욤이"],
 
     "status": "모집중",
 
     "condition": [
-      "레벨 150 이상",
-      "주 5일 접속",
-      "디스코드 필수"
+      "레벨 24 이상",
+      "조사병단 칭호 보유자",
+      "공지 오픈채팅 참여 필수"
     ],
 
     "link": "https://open.kakao.com/me/Coblin"
   },
 
   {
-    "name": "Beginner Guild",
-    "image": "https://example.com/img2.jpg",
-    "banner": "https://example.com/banner2.jpg",
-    "description": "초보자 환영 길드입니다.",
-    "members": 12,
-    "capacity": 100,
+    "name": "신청해주세요 (1)",
+    "image": "images/preparing/preparing.webp",
+    "banner": "images/preparing/preparing.webp",
+    "description": "가벼운 한줄소개입니다.",
+    "members": 1,
+    "capacity": 30,
 
     "category": ["NEW", "recruit"],
 
-    "leader": "NewMaster",
-    "manager": "HelperOne",
+    "leader": "팸장",
+    "manager": "운영진",
 
-    "condition": "자유 가입",
+    "condition": "가입조건은 최대 3개 기입가능",
+
+    "link": "https://open.kakao.com/o/example2"
+  }
+  {
+    "name": "신청해주세요 (2)",
+    "image": "images/preparing/preparing.webp",
+    "banner": "images/preparing/preparing.webp",
+    "description": "가벼운 한줄소개입니다.",
+    "members": 1,
+    "capacity": 30,
+
+    "category": ["NEW", "recruit"],
+
+    "leader": "팸장",
+    "manager": "운영진",
+
+    "condition": "가입조건은 최대 3개 기입가능",
 
     "link": "https://open.kakao.com/o/example2"
   }
