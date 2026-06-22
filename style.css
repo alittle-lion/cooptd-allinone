@@ -65,7 +65,7 @@ header p{
 
 
 /* ==============================
-   CATEGORY BAR (🔥 sticky + 개선)
+   CATEGORY BAR (sticky)
 ============================== */
 
 .category-bar{
@@ -105,6 +105,8 @@ header p{
     cursor:pointer;
 
     transition:.25s;
+
+    white-space:nowrap;
 }
 
 .category-btn:hover{
@@ -135,7 +137,7 @@ header p{
 
 
 /* ==============================
-   MENU GRID (버튼 균형 유지)
+   MENU GRID (🔥 모바일에서도 유지)
 ============================== */
 
 .menu-grid{
@@ -194,7 +196,7 @@ header p{
 
 
 /* ==============================
-   CARD (🔥 fade-in 추가)
+   CARD (fade + 안정화)
 ============================== */
 
 .guild-card{
@@ -282,7 +284,7 @@ header p{
 
 
 /* ==============================
-   BADGES
+   BADGES (깨짐 방지 핵심)
 ============================== */
 
 .guild-badges{
@@ -290,17 +292,21 @@ header p{
     flex-wrap:wrap;
     gap:6px;
     min-height:28px;
+    align-items:center;
 }
 
 .badge{
     display:inline-flex;
     align-items:center;
+
     white-space:nowrap;
 
     font-size:.75rem;
     padding:4px 10px;
     border-radius:999px;
     font-weight:700;
+
+    line-height:1; /* 🔥 1~2px 차이 해결 핵심 */
 }
 
 .badge.rank{ background:#d99b00; color:#111; }
@@ -310,7 +316,7 @@ header p{
 
 
 /* ==============================
-   FOOTER BUTTONS (균형 유지 + 클릭감)
+   FOOTER (🔥 가입조건 픽셀 문제 해결 핵심)
 ============================== */
 
 .guild-footer{
@@ -327,13 +333,22 @@ header p{
 
     height:50px;
 
+    padding:0;
+    margin:0;
+
+    border:0;
+
     font-size:15px;
     font-weight:700;
+
+    line-height:1; /* 🔥 핵심: 브라우저 차이 제거 */
 
     color:white;
     text-decoration:none;
 
     cursor:pointer;
+
+    box-sizing:border-box;
 
     transition:.2s;
 }
@@ -393,20 +408,48 @@ header p{
 
 
 /* ==============================
-   RESPONSIVE
+   RESPONSIVE (🔥 핵심 수정)
 ============================== */
 
+/* 태블릿 */
 @media (max-width:1024px){
-    .guild-grid{ grid-template-columns:repeat(3,1fr); }
+    .guild-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
 }
 
+/* 모바일 - 메뉴 유지 (핵심 요구사항 반영) */
 @media (max-width:768px){
-    .menu-grid{ grid-template-columns:1fr; }
-    .guild-grid{ grid-template-columns:repeat(2,1fr); }
+
+    .menu-grid{
+        grid-template-columns:repeat(3,1fr); /* 🔥 데스크탑 느낌 유지 */
+        gap:12px;
+    }
+
+    .menu-card{
+        min-height:100px;
+        padding:14px 10px;
+    }
+
+    .menu-card h2{
+        font-size:1rem;
+    }
+
+    .menu-card span{
+        font-size:.75rem;
+    }
+
+    .guild-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
 }
 
+/* 작은 모바일 */
 @media (max-width:480px){
-    .guild-grid{ grid-template-columns:1fr; }
+
+    .guild-grid{
+        grid-template-columns:1fr;
+    }
 
     header h1{
         font-size:2rem;
