@@ -62,6 +62,57 @@ header p{
 }
 
 /* ==============================
+   CATEGORY BAR (추가 위치)
+============================== */
+
+.category-bar{
+    width:90%;
+    max-width:900px;
+
+    margin:20px auto 50px;
+
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+}
+
+.category-btn{
+    padding:10px 16px;
+
+    border-radius:999px;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    background:rgba(18,42,86,.6);
+
+    color:#c9d4ec;
+
+    font-size:.85rem;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    backdrop-filter: blur(6px);
+}
+
+.category-btn:hover{
+    transform:translateY(-2px);
+    border-color:#37d7ff;
+    color:white;
+}
+
+.category-btn.active{
+    background:linear-gradient(90deg,#2dc8ff,#bb72ff);
+    color:white;
+    border-color:transparent;
+
+    box-shadow:0 0 15px rgba(55,215,255,.25);
+}
+
+/* ==============================
    SECTION TITLE
 ============================== */
 
