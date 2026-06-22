@@ -1,5 +1,5 @@
 /* ==============================
-   협동 디펜스 길드 사이트 (FINAL)
+   GLOBAL
 ============================== */
 
 *{
@@ -9,10 +9,8 @@
 }
 
 :root{
-
     --bg:#07152d;
     --bg2:#10254c;
-
     --card:#0b1d3d;
 
     --text:#ffffff;
@@ -22,21 +20,21 @@
     --purple:#bb72ff;
     --green:#55ff8a;
     --orange:#ffb44c;
-
-    --radius:24px;
 }
 
-body{
+/* ==============================
+   BODY
+============================== */
 
+body{
     font-family:"Pretendard",sans-serif;
     color:var(--text);
-
     background:linear-gradient(90deg,var(--bg),var(--bg2));
     min-height:100vh;
 }
 
 /* ==============================
-HEADER
+   HEADER
 ============================== */
 
 header{
@@ -47,133 +45,86 @@ header{
 header h1{
     font-size:3rem;
     font-weight:800;
-    margin-bottom:15px;
 }
 
 header p{
     color:var(--sub);
-    font-size:1.2rem;
 }
 
 /* ==============================
-SEARCH
+   SEARCH
 ============================== */
 
 .search{
     width:90%;
     max-width:900px;
-    margin:70px auto;
+    margin:50px auto;
 }
 
 .search input{
     width:100%;
-    padding:18px 25px;
-    font-size:1rem;
+    padding:16px 20px;
+    border-radius:50px;
     border:none;
     outline:none;
-    border-radius:50px;
     background:#122a56;
     color:white;
 }
 
-.search input::placeholder{
-    color:#98a7c8;
-}
-
 /* ==============================
-SECTION
+   SECTION TITLE
 ============================== */
-
-section{
-    margin-bottom:90px;
-}
 
 .section-title{
     width:90%;
     max-width:1400px;
-    margin:0 auto 35px;
-    font-size:2rem;
+    margin:0 auto 30px;
+    font-size:1.8rem;
 }
 
 /* ==============================
-MENU GRID
-============================== */
-
-.menu-grid{
-    width:90%;
-    max-width:1200px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-}
-
-/* ==============================
-MENU CARD
-============================== */
-
-.menu-card{
-    background:linear-gradient(180deg,rgba(7,22,52,.9),rgba(4,13,32,.95));
-    border:2px solid rgba(55,215,255,.45);
-    border-radius:20px;
-    text-decoration:none;
-    color:white;
-    padding:22px 15px;
-    text-align:center;
-    transition:.3s;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    min-height:115px;
-}
-
-.menu-card:hover{
-    transform:translateY(-5px);
-    border-color:var(--cyan);
-}
-
-/* ==============================
-GUILD GRID
+   GRID
 ============================== */
 
 .guild-grid{
     width:90%;
     max-width:1600px;
     margin:auto;
+
     display:grid;
-    gap:24px;
     grid-template-columns:repeat(4,1fr);
+    gap:24px;
 }
 
 /* ==============================
-GUILD CARD
+   CARD
 ============================== */
 
 .guild-card{
-
-    overflow:hidden;
     display:flex;
     flex-direction:column;
 
     background:linear-gradient(180deg,rgba(10,24,52,.95),rgba(5,13,30,.95));
-    border:2px solid rgba(255,255,255,.08);
-    border-radius:26px;
+    border-radius:24px;
+    overflow:hidden;
 
-    transition:.35s;
-    cursor:pointer;
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.3s;
 }
 
 .guild-card:hover{
-    transform:translateY(-8px);
-    border-color:#37d7ff;
+    transform:translateY(-6px);
+    border-color:var(--cyan);
 }
 
-/* 이미지 */
+/* ==============================
+   IMAGE
+============================== */
 
 .guild-image{
     width:100%;
     aspect-ratio:16/10;
-    overflow:hidden;
     background:#08142f;
 }
 
@@ -181,103 +132,129 @@ GUILD CARD
     width:100%;
     height:100%;
     object-fit:cover;
-    transition:.45s;
 }
 
-.guild-card:hover .guild-image img{
-    transform:scale(1.08);
-}
-
-/* 콘텐츠 */
+/* ==============================
+   CONTENT
+============================== */
 
 .guild-content{
-    padding:18px;
+    padding:16px 18px;
+}
+
+/* 이름 + 인원 */
+.guild-top-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:8px;
 }
 
 .guild-name{
-    font-size:1.15rem;
+    font-size:1.1rem;
     font-weight:700;
-    margin-bottom:12px;
 }
 
+.guild-member{
+    font-size:.85rem;
+    color:#9eb4df;
+}
+
+/* 설명 */
 .guild-description{
-    color:#c5d3ef;
     font-size:.9rem;
-    line-height:1.5;
+    color:#c5d3ef;
+    line-height:1.4;
     margin-bottom:10px;
 }
 
-.guild-info{
-    color:#d7e2fa;
-    font-size:.95rem;
-}
-
-/* 카테고리 */
-
-.guild-category{
-    margin-top:10px;
-    font-size:.85rem;
-    color:#37d7ff;
-    font-weight:600;
-}
-
-/* footer */
-
-.guild-footer{
-    margin-top:auto;
-    padding:20px;
-    border-top:1px solid rgba(255,255,255,.06);
-}
-
-.join-btn{
-    display:inline-flex;
-    justify-content:center;
-    padding:12px 22px;
-    border-radius:12px;
-    text-decoration:none;
-    font-weight:700;
-    color:white;
-    background:linear-gradient(90deg,#2dc8ff,#2e89ff);
-}
-
-.join-btn:hover{
-    transform:scale(1.05);
-}
-
 /* ==============================
-가입조건 버튼
+   BADGES
 ============================== */
 
-.condition-btn{
-    width:90%;
-    margin:10px auto;
-    padding:12px;
-    border:none;
-    border-radius:12px;
-    cursor:pointer;
-    font-weight:700;
-    color:white;
-    background:linear-gradient(90deg,#bb72ff,#37d7ff);
+.guild-badges{
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px;
 }
 
-.condition-btn:hover{
-    transform:scale(1.03);
+.badge{
+    font-size:.75rem;
+    padding:4px 10px;
+    border-radius:999px;
+    font-weight:700;
+}
+
+.badge.rank{
+    background:#d99b00;
+    color:#111;
+}
+
+.badge.hot{
+    background:#ff3b3b;
+    color:white;
+}
+
+.badge.new{
+    background:#2d7dff;
+    color:white;
+}
+
+.badge.status{
+    background:#1c2f55;
+    color:#c9d4ec;
 }
 
 /* ==============================
-MODAL
+   FOOTER (핵심)
+============================== */
+
+.guild-footer{
+    display:flex;
+    border-top:1px solid rgba(255,255,255,.08);
+}
+
+/* 버튼 공통 */
+.footer-btn{
+    flex:1;
+    padding:14px 0;
+    text-align:center;
+    font-weight:700;
+    cursor:pointer;
+    border:none;
+    text-decoration:none;
+    color:white;
+    transition:.2s;
+}
+
+/* 왼쪽 */
+.footer-btn.left{
+    background:#2dc8ff;
+}
+
+/* 오른쪽 */
+.footer-btn.right{
+    background:#bb72ff;
+}
+
+/* hover */
+.footer-btn:hover{
+    filter:brightness(1.1);
+}
+
+/* ==============================
+   MODAL
 ============================== */
 
 .modal{
     position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
+    inset:0;
     background:rgba(0,0,0,.75);
+
     display:flex;
     justify-content:center;
     align-items:center;
+
     z-index:9999;
 }
 
@@ -289,15 +266,16 @@ MODAL
     width:90%;
     max-width:520px;
     background:#0b1d3d;
-    border-radius:18px;
+    border-radius:16px;
     padding:20px;
-    position:relative;
+
+    color:white;
 }
 
 .modal-content img{
     width:100%;
     border-radius:12px;
-    margin-bottom:15px;
+    margin-bottom:10px;
 }
 
 .modal-content h2{
@@ -305,20 +283,20 @@ MODAL
 }
 
 .modal-content p{
-    margin-bottom:8px;
     color:#c9d4ec;
+    margin-bottom:6px;
 }
 
 .modal .close{
     position:absolute;
-    right:15px;
-    top:10px;
+    right:20px;
+    top:15px;
     font-size:26px;
     cursor:pointer;
 }
 
 /* ==============================
-RESPONSIVE
+   RESPONSIVE
 ============================== */
 
 @media (max-width:1024px){
@@ -328,10 +306,6 @@ RESPONSIVE
 }
 
 @media (max-width:768px){
-    .menu-grid{
-        grid-template-columns:1fr;
-    }
-
     .guild-grid{
         grid-template-columns:repeat(2,1fr);
     }
@@ -340,5 +314,9 @@ RESPONSIVE
 @media (max-width:480px){
     .guild-grid{
         grid-template-columns:1fr;
+    }
+
+    header h1{
+        font-size:2rem;
     }
 }
