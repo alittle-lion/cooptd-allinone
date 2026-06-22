@@ -1,48 +1,43 @@
 [
   {
-    "id": "kopam",
-
-    "name": "코팸",
-    "description": "협동타워디펜스 No.1 코팸입니다.",
-
+    "name": "kopam",
     "image": "images/test/kopam1.webp",
     "banner": "images/banner/kopam.webp",
-
-    "leader": "길드장닉네임",
-    "officers": ["운영진1", "운영진2", "운영진3"],
-
-    "members": 99,
+    "description": "상위권 길드입니다.",
+    "members": 45,
     "capacity": 100,
 
-    "category": ["HOT", "모집중"],
-
+    "category": ["HOT", "RANK", "recruit"],
     "rank": 1,
 
-    "condition": "레벨 50 이상 / 디스코드 필수 / 매일 접속",
+    "leader": "코블린",
+    "officers": ["코리하", "ViceB"],
 
-    "link": "https://open.kakao.com/me/Coblin"
+    "status": "모집중",
+
+    "condition": [
+      "레벨 150 이상",
+      "주 5일 접속",
+      "디스코드 필수"
+    ],
+
+    "link": "https://open.kakao.com/o/example1"
   },
 
   {
-    "id": 2,
+    "name": "Beginner Guild",
+    "image": "https://example.com/img2.jpg",
+    "banner": "https://example.com/banner2.jpg",
+    "description": "초보자 환영 길드입니다.",
+    "members": 12,
+    "capacity": 100,
 
-    "name": "협동타워 2길드",
-    "description": "랭커 중심 / 경쟁 콘텐츠 중심 길드",
+    "category": ["NEW", "recruit"],
 
-    "image": "images/guild2.jpg",
-    "banner": "images/banner2.jpg",
+    "leader": "NewMaster",
+    "manager": "HelperOne",
 
-    "leader": "마스터닉",
-    "officers": ["부마스터1"],
-
-    "members": 30,
-    "capacity": 40,
-
-    "category": ["NEW"],
-
-    "rank": 5,
-
-    "condition": "레벨 70 이상 / 활동 필수",
+    "condition": "자유 가입",
 
     "link": "https://open.kakao.com/o/example2"
   }
