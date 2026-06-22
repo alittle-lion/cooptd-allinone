@@ -19,11 +19,10 @@
 
 <header>
 
-    <h1>🏰 협동타워 디펜스 길드 홍보 🏰</h1>
+    <h1>🏰 협동타워 디펜스 길드 🏰</h1>
 
     <p>
-        협타디 최고의 길드를 찾아 함께 플레이하세요.
-        해당 사이트는 공익의 목적을 위해서 제작되었습니다.
+        최고의 길드를 찾아 함께 플레이하세요.
     </p>
 
 </header>
@@ -34,56 +33,36 @@
 <section class="menu-grid">
 
     <a href="https://open.kakao.com/" target="_blank" class="menu-card">
-
         <h2>💬 문의하기</h2>
-
         <span>개발자 오픈채팅</span>
-
     </a>
 
-    <a href="#" target="_blank" class="menu-card">
-
+    <a href="#" class="menu-card">
         <h2>🔧 협타디툴</h2>
-
         <span>마신배치툴, 마신석 계산 사이트</span>
-
     </a>
 
     <a href="https://cafe.naver.com/cooptd" target="_blank" class="menu-card">
-
         <h2>📢 공식카페</h2>
-
         <span>공지사항 및 업데이트</span>
-
     </a>
 
-<!-- 추가 -->
-
     <a href="#" class="menu-card">
-
-        <h2>📝 준비중..</h2>
-
-        <span>준비중인 팝업..</span>
-    
+        <h2>📝 준비중</h2>
+        <span>준비중인 기능</span>
     </a>
-    
-    <a href="#" class="menu-card">
 
+    <a href="#" class="menu-card">
         <h2>🏆 길드 랭킹</h2>
-
-        <span>인기 길드를 확인하세요.</span>
-
+        <span>인기 길드 확인</span>
     </a>
 
     <a href="#" class="menu-card">
-
-        <h2>🎁 준비중..</h2>
-
-        <span>준비중인 팝업..</span>
-
+        <h2>🎁 준비중</h2>
+        <span>추가 예정 기능</span>
     </a>
 
-    </section>
+</section>
 
 
 <!-- ================= SEARCH ================= -->
@@ -98,28 +77,28 @@
 
 </section>
 
-<section class="category">
-    <button onclick="filterCategory('ALL')">전체</button>
-    <button onclick="filterCategory('RANK')">RANK</button>
-    <button onclick="filterCategory('HOT')">HOT</button>
-    <button onclick="filterCategory('NEW')">NEW</button>
-    <button onclick="filterCategory('모집중')">모집중</button>
-    <button onclick="filterCategory('모집중단')">모집중단</button>
+
+<!-- ================= CATEGORY FILTER ================= -->
+
+<section class="category-bar">
+
+    <button class="category-btn active" onclick="filterCategory('ALL')">전체</button>
+    <button class="category-btn" onclick="filterCategory('RANK')">RANK</button>
+    <button class="category-btn" onclick="filterCategory('HOT')">HOT</button>
+    <button class="category-btn" onclick="filterCategory('NEW')">NEW</button>
+    <button class="category-btn" onclick="filterCategory('recruit')">모집중</button>
+    <button class="category-btn" onclick="filterCategory('closed')">모집중단</button>
+
 </section>
+
 
 <!-- ================= 추천 길드 ================= -->
 
 <section>
 
-    <h2 class="section-title">
-        🔥 추천 길드
-    </h2>
+    <h2 class="section-title">🔥 추천 길드</h2>
 
-    <div id="featuredGuilds" class="guild-grid">
-
-        <!-- JS 자동 생성 -->
-
-    </div>
+    <div id="featuredGuilds" class="guild-grid"></div>
 
 </section>
 
@@ -128,15 +107,9 @@
 
 <section>
 
-    <h2 class="section-title">
-        ⭐ 전체 길드
-    </h2>
+    <h2 class="section-title">⭐ 전체 길드</h2>
 
-    <div id="guildContainer" class="guild-grid">
-
-        <!-- JS 자동 생성 -->
-
-    </div>
+    <div id="guildContainer" class="guild-grid"></div>
 
 </section>
 
@@ -145,11 +118,7 @@
 
 <footer>
 
-    <p>
-
-        © 2026 협동 디펜스 길드 홍보 사이트
-
-    </p>
+    <p>© 2026 협동 디펜스 길드 홍보 사이트</p>
 
 </footer>
 
