@@ -240,17 +240,40 @@ function applyFilters() {
 
     let result = [...guilds];
 
+    // =============================
+    // 카테고리 필터
+    // =============================
     if (currentCategory !== "ALL") {
 
         result = result.filter(guild => {
 
-            return normalizeCategory(guild.category)
-                .includes(currentCategory);
+            const cats = normalizeCategory(guild.category);
+
+            switch (currentCategory) {
+
+                case "RANK":
+                    // rank 값이 있으면 RANK로 인식
+                    return guild.rank != null;
+
+                case "recruit":
+                    // recruit 또는 모집중 둘 다 허용
+                    return cats.includes("recruit") || cats.includes("모집중");
+
+                case "closed":
+                    // closed 또는 모집중단 둘 다 허용
+                    return cats.includes("closed") || cats.includes("모집중단");
+
+                default:
+                    return cats.includes(currentCategory);
+            }
 
         });
 
     }
 
+    // =============================
+    // 검색 필터
+    // =============================
     if (currentKeyword) {
 
         result = result.filter(guild => {
@@ -268,7 +291,7 @@ function applyFilters() {
 
                 ||
 
-                (guild.manager || "")
+                ((guild.manager || guild.officers?.join(" ") || ""))
                     .toLowerCase()
                     .includes(currentKeyword)
             );
