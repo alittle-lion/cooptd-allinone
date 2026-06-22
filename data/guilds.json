@@ -25,7 +25,7 @@
   },
 
   {
-    "name": "신청해주세요 (1)",
+    "name": "길드1",
     "image": "images/preparing/preparing.webp",
     "banner": "images/preparing/preparing.webp",
     "description": "가벼운 한줄소개입니다.",
@@ -42,7 +42,7 @@
     "link": "https://open.kakao.com/o/example2"
   }
   {
-    "name": "신청해주세요 (2)",
+    "name": "길드2",
     "image": "images/preparing/preparing.webp",
     "banner": "images/preparing/preparing.webp",
     "description": "가벼운 한줄소개입니다.",
