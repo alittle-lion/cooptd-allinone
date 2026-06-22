@@ -379,9 +379,14 @@ function openModal(guild) {
     // 운영진
     // -----------------------------
     const manager = document.getElementById("modalManager");
-    if (manager) {
-        manager.textContent = guild.manager || "미등록";
-    }
+
+	if (manager) {
+		if (Array.isArray(guild.officers)) {
+			manager.textContent = guild.officers.join(", ");
+		} else {
+			manager.textContent = guild.manager || "미등록";
+		}
+	}
 
     // -----------------------------
     // 현재 인원
@@ -457,23 +462,23 @@ function openModal(guild) {
     // -----------------------------
     // 문의하기
     // -----------------------------
-    const link = document.getElementById("modalLink");
+	const link = document.getElementById("modalLink");
 
-    if (link) {
+	if (link) {
 
-        link.href = guild.link || "#";
+		link.href = guild.link || "#";
 
-        if (!guild.link) {
-            link.style.pointerEvents = "none";
-            link.style.opacity = "0.5";
-        } else {
-            link.style.pointerEvents = "";
-            link.style.opacity = "";
-        }
+		if (!guild.link) {
+			link.style.pointerEvents = "none";
+			link.style.opacity = "0.5";
+			link.textContent = "문의 불가";
+		} else {
+			link.style.pointerEvents = "";
+			link.style.opacity = "";
+			link.textContent = "문의하기";
+		}
 
-    }
-
-}
+	}
 
 
 // ======================================================
