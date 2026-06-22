@@ -22,7 +22,8 @@
     <h1>🏰 협동타워 디펜스 길드 🏰</h1>
 
     <p>
-        최고의 길드를 찾아 함께 플레이하세요.
+        협타디 최고의 길드를 찾아 함께 플레이하세요.
+        해당 사이트는 공익의 목적을 위해서 제작되었습니다.
     </p>
 
 </header>
@@ -92,11 +93,19 @@
     <input
         type="text"
         id="search"
-        placeholder="길드 이름 검색..."
+        placeholder="길드 이름 혹은 운영진 닉네임 검색..."
     >
 
 </section>
 
+<section class="category">
+    <button onclick="filterCategory('ALL')">전체</button>
+    <button onclick="filterCategory('RANK')">RANK</button>
+    <button onclick="filterCategory('HOT')">HOT</button>
+    <button onclick="filterCategory('NEW')">NEW</button>
+    <button onclick="filterCategory('모집중')">모집중</button>
+    <button onclick="filterCategory('모집중단')">모집중단</button>
+</section>
 
 <!-- ================= 추천 길드 ================= -->
 
