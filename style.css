@@ -398,18 +398,27 @@ header p{
 ============================== */
 
 .modal{
+
     position:fixed;
     inset:0;
+
     background:rgba(0,0,0,.75);
 
     display:flex;
+
     justify-content:center;
-    align-items:center;
+
+    align-items:flex-start;
+
+    overflow-y:auto;
+
+    padding:40px 20px;
 
     opacity:0;
     visibility:hidden;
 
     transition:.25s;
+
     z-index:9999;
 }
 
@@ -419,9 +428,12 @@ header p{
 }
 
 .modal-content{
+    position:relative;
+
     width:90%;
     max-width:520px;
-
+    max-height:90vh;
+    overflow-y:auto;
     background:#0b1d3d;
     border-radius:16px;
     padding:20px;
@@ -629,8 +641,6 @@ header p{
     top:18px;
     right:18px;
 
-    z-index:9999;
-   
     width:42px;
     height:42px;
 
