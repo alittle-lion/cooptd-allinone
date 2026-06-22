@@ -1,5 +1,5 @@
 // ======================================================
-// Guild Site v2.0 (Fixed + Array Safe)
+// Guild Site v2.0 (FINAL FIX)
 // ======================================================
 
 let guilds = [];
@@ -13,18 +13,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     loadGuilds();
 
-    document.getElementById("search")
-        .addEventListener("input", searchGuild);
+    const searchInput = document.getElementById("search");
+    if (searchInput) {
+        searchInput.addEventListener("input", searchGuild);
+    }
 
     const modal = document.getElementById("guildModal");
 
-    modal.addEventListener("click", (e) => {
-        if (e.target.id === "guildModal") {
-            closeModal();
-        }
-    });
+    if (modal) {
+        modal.addEventListener("click", (e) => {
+            if (e.target.id === "guildModal") {
+                closeModal();
+            }
+        });
+    }
 
-    // 기본 카테고리 active (ALL 기준)
+    // 기본 활성 버튼 (ALL)
     const allBtn = document.querySelector('.category-btn[data-category="ALL"]');
     if (allBtn) setActiveCategory(allBtn);
 });
@@ -55,6 +59,8 @@ function renderGuilds(data) {
     const featured = document.getElementById("featuredGuilds");
     const normal = document.getElementById("guildContainer");
 
+    if (!featured || !normal) return;
+
     featured.innerHTML = "";
     normal.innerHTML = "";
 
@@ -62,11 +68,9 @@ function renderGuilds(data) {
 
         const card = createGuildCard(guild);
 
-        const cats = Array.isArray(guild.category)
-            ? guild.category
-            : [guild.category];
+        const cats = normalizeCategory(guild.category);
 
-        // HOT이면 추천
+        // HOT 포함이면 추천
         if (cats.includes("HOT")) {
             featured.appendChild(card);
         } else {
@@ -84,27 +88,25 @@ function createGuildCard(guild) {
     const card = document.createElement("div");
     card.className = "guild-card";
 
-    const cats = Array.isArray(guild.category)
-        ? guild.category
-        : [guild.category];
+    const cats = normalizeCategory(guild.category);
 
     card.innerHTML = `
         <div class="guild-image">
-            <img src="${guild.image}" alt="${guild.name}">
+            <img src="${guild.image || ""}" alt="${guild.name || ""}">
         </div>
 
         <div class="guild-content">
 
             <div class="guild-top-row">
-                <div class="guild-name">${guild.name}</div>
+                <div class="guild-name">${guild.name || "이름 없음"}</div>
 
                 <div class="guild-member">
-                    👥 ${guild.members} / ${guild.capacity}
+                    👥 ${guild.members || 0} / ${guild.capacity || 0}
                 </div>
             </div>
 
             <div class="guild-description">
-                ${guild.description}
+                ${guild.description || ""}
             </div>
 
             <div class="guild-badges">
@@ -121,7 +123,7 @@ function createGuildCard(guild) {
 
         <div class="guild-footer">
 
-            <a href="${guild.link}" target="_blank" class="footer-btn left">
+            <a href="${guild.link || "#"}" target="_blank" class="footer-btn left">
                 문의하기
             </a>
 
@@ -132,9 +134,11 @@ function createGuildCard(guild) {
         </div>
     `;
 
-    // 🔥 안전한 이벤트 방식 (JSON stringify 제거)
-    const modalBtn = card.querySelector(".footer-btn.right");
-    modalBtn.addEventListener("click", () => openModal(guild));
+    // 안전 이벤트 바인딩
+    const btn = card.querySelector(".footer-btn.right");
+    if (btn) {
+        btn.addEventListener("click", () => openModal(guild));
+    }
 
     return card;
 }
@@ -146,18 +150,16 @@ function createGuildCard(guild) {
 function searchGuild() {
 
     currentKeyword = this.value.toLowerCase().trim();
-
     applyFilters();
 }
 
 
 // ======================================================
-// 카테고리 필터 (배열 대응)
+// 카테고리 필터
 // ======================================================
 function filterCategory(category, el) {
 
     currentCategory = category;
-
     setActiveCategory(el);
 
     applyFilters();
@@ -171,30 +173,37 @@ function applyFilters() {
 
     let result = guilds;
 
-    // 카테고리 필터
+    // 카테고리
     if (currentCategory !== "ALL") {
-
-        result = result.filter(guild => {
-
-            const cats = Array.isArray(guild.category)
-                ? guild.category
-                : [guild.category];
-
-            return cats.includes(currentCategory);
-        });
+        result = result.filter(guild =>
+            normalizeCategory(guild.category).includes(currentCategory)
+        );
     }
 
-    // 검색 필터
+    // 검색
     if (currentKeyword) {
-
         result = result.filter(guild =>
-            guild.name.toLowerCase().includes(currentKeyword) ||
-            (guild.leader &&
-                guild.leader.toLowerCase().includes(currentKeyword))
+            (guild.name || "").toLowerCase().includes(currentKeyword) ||
+            (guild.leader || "").toLowerCase().includes(currentKeyword)
         );
     }
 
     renderGuilds(result);
+}
+
+
+// ======================================================
+// 카테고리 정규화 (핵심)
+// ======================================================
+function normalizeCategory(category) {
+
+    if (!category) return [];
+
+    if (Array.isArray(category)) {
+        return category;
+    }
+
+    return [category];
 }
 
 
@@ -216,28 +225,27 @@ function setActiveCategory(activeBtn) {
 // ======================================================
 // MODAL
 // ======================================================
-
-// 열기
 function openModal(guild) {
 
     const modal = document.getElementById("guildModal");
+    if (!modal) return;
 
-    modal.classList.add("show"); // 🔥 hidden → show 통일
+    modal.classList.add("show");
 
     document.getElementById("modalBanner").src =
-        guild.banner || guild.image;
+        guild.banner || guild.image || "";
 
     document.getElementById("modalName").textContent =
-        guild.name;
+        guild.name || "";
 
     document.getElementById("modalDescription").textContent =
-        guild.description;
+        guild.description || "";
 
     document.getElementById("modalLeader").textContent =
         guild.leader || "미등록";
 
     document.getElementById("modalMembers").textContent =
-        `${guild.members} / ${guild.capacity}`;
+        `${guild.members || 0} / ${guild.capacity || 0}`;
 
     document.getElementById("modalCondition").textContent =
         guild.condition || "조건 없음";
@@ -246,5 +254,6 @@ function openModal(guild) {
 
 // 닫기
 function closeModal() {
-    document.getElementById("guildModal").classList.remove("show");
+    const modal = document.getElementById("guildModal");
+    if (modal) modal.classList.remove("show");
 }
