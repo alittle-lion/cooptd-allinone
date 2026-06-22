@@ -1,5 +1,5 @@
 // ======================================================
-// Guild Site v2.0 (Refactored + UI Fix)
+// Guild Site v2.0 (Fixed + Array Safe)
 // ======================================================
 
 let guilds = [];
@@ -16,16 +16,17 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("search")
         .addEventListener("input", searchGuild);
 
-    // 모달 배경 클릭 닫기
-    document.getElementById("guildModal")
-        .addEventListener("click", (e) => {
-            if (e.target.id === "guildModal") {
-                closeModal();
-            }
-        });
+    const modal = document.getElementById("guildModal");
 
-    // 기본 카테고리 active (전체)
-    setActiveCategory(document.querySelector(".category-btn"));
+    modal.addEventListener("click", (e) => {
+        if (e.target.id === "guildModal") {
+            closeModal();
+        }
+    });
+
+    // 기본 카테고리 active (ALL 기준)
+    const allBtn = document.querySelector('.category-btn[data-category="ALL"]');
+    if (allBtn) setActiveCategory(allBtn);
 });
 
 
@@ -61,7 +62,12 @@ function renderGuilds(data) {
 
         const card = createGuildCard(guild);
 
-        if (guild.category === "HOT") {
+        const cats = Array.isArray(guild.category)
+            ? guild.category
+            : [guild.category];
+
+        // HOT이면 추천
+        if (cats.includes("HOT")) {
             featured.appendChild(card);
         } else {
             normal.appendChild(card);
@@ -77,6 +83,10 @@ function createGuildCard(guild) {
 
     const card = document.createElement("div");
     card.className = "guild-card";
+
+    const cats = Array.isArray(guild.category)
+        ? guild.category
+        : [guild.category];
 
     card.innerHTML = `
         <div class="guild-image">
@@ -101,11 +111,9 @@ function createGuildCard(guild) {
 
                 ${guild.rank ? `<span class="badge rank">RANK #${guild.rank}</span>` : ""}
 
-                ${guild.category === "HOT" ? `<span class="badge hot">HOT</span>` : ""}
-
-                ${guild.category === "NEW" ? `<span class="badge new">NEW</span>` : ""}
-
-                <span class="badge status">${guild.category}</span>
+                ${cats.map(cat =>
+                    `<span class="badge status">${cat}</span>`
+                ).join("")}
 
             </div>
 
@@ -117,13 +125,16 @@ function createGuildCard(guild) {
                 문의하기
             </a>
 
-            <button class="footer-btn right"
-                onclick='openModal(${JSON.stringify(guild)})'>
+            <button class="footer-btn right">
                 가입조건
             </button>
 
         </div>
     `;
+
+    // 🔥 안전한 이벤트 방식 (JSON stringify 제거)
+    const modalBtn = card.querySelector(".footer-btn.right");
+    modalBtn.addEventListener("click", () => openModal(guild));
 
     return card;
 }
@@ -141,7 +152,7 @@ function searchGuild() {
 
 
 // ======================================================
-// 카테고리 필터 (핵심 수정)
+// 카테고리 필터 (배열 대응)
 // ======================================================
 function filterCategory(category, el) {
 
@@ -154,7 +165,7 @@ function filterCategory(category, el) {
 
 
 // ======================================================
-// 필터 통합 (검색 + 카테고리)
+// 통합 필터
 // ======================================================
 function applyFilters() {
 
@@ -162,16 +173,24 @@ function applyFilters() {
 
     // 카테고리 필터
     if (currentCategory !== "ALL") {
-        result = result.filter(guild =>
-            guild.category === currentCategory
-        );
+
+        result = result.filter(guild => {
+
+            const cats = Array.isArray(guild.category)
+                ? guild.category
+                : [guild.category];
+
+            return cats.includes(currentCategory);
+        });
     }
 
     // 검색 필터
     if (currentKeyword) {
+
         result = result.filter(guild =>
             guild.name.toLowerCase().includes(currentKeyword) ||
-            (guild.leader && guild.leader.toLowerCase().includes(currentKeyword))
+            (guild.leader &&
+                guild.leader.toLowerCase().includes(currentKeyword))
         );
     }
 
@@ -180,7 +199,7 @@ function applyFilters() {
 
 
 // ======================================================
-// ACTIVE UI 관리
+// ACTIVE UI
 // ======================================================
 function setActiveCategory(activeBtn) {
 
@@ -203,7 +222,7 @@ function openModal(guild) {
 
     const modal = document.getElementById("guildModal");
 
-    modal.classList.remove("hidden");
+    modal.classList.add("show"); // 🔥 hidden → show 통일
 
     document.getElementById("modalBanner").src =
         guild.banner || guild.image;
@@ -222,12 +241,10 @@ function openModal(guild) {
 
     document.getElementById("modalCondition").textContent =
         guild.condition || "조건 없음";
-
-    document.getElementById("modalLink").href =
-        guild.link;
 }
+
 
 // 닫기
 function closeModal() {
-    document.getElementById("guildModal").classList.add("hidden");
+    document.getElementById("guildModal").classList.remove("show");
 }
