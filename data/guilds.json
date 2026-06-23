@@ -78,9 +78,9 @@
     "name": "Authentic",
     "image": "images/preparing/preparing.webp",
     "banner": "images/preparing/preparing.webp",
-    "description": "한줄소개 준비중입니다.",
-    "members": 1,
-    "capacity": 30,
+    "description": "함께 성장하는 어센틱입니다!",
+    "members": 49,
+    "capacity": 50,
 
     "category": ["HOT", "NEW", "recruit"],
     "rank": 0,
@@ -90,7 +90,11 @@
     "leader": "재히ジ",
     "manager": ["세스코ジ", "빙그레ジ", "오멘ジ", "고양이ジ"],
 
-    "condition": "가입조건은 최대 3개 기입가능",
+    "condition": [
+      "레벨 20 이상, 길드 오픈채팅 참여 필수",
+      "딜러: 메인딜러 풀풀 서브딜러 2차 해방 이상",
+      "서폿: 빙결2차/에그비11렙/부두술사13렙"
+    ],
 
     "link": "https://open.kakao.com/o/example2"
   },
