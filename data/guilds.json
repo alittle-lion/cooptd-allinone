@@ -50,14 +50,17 @@
   },
   
   {
-    "name": "길드2",
+    "name": "응애",
     "image": "images/preparing/preparing.webp",
     "banner": "images/preparing/preparing.webp",
-    "description": "가벼운 한줄소개입니다.",
+    "description": "한줄소개 준비중입니다.",
     "members": 1,
-    "capacity": 30,
+    "capacity": 50,
 
-    "category": ["NEW", "recruit"],
+    "category": ["HOT", "recruit"],
+    "rank": 0,
+
+    "status": "모집중",
 
     "leader": "팸장",
     "manager": "운영진",
@@ -68,14 +71,17 @@
   },
   
   {
-    "name": "길드3",
+    "name": "어센틱",
     "image": "images/preparing/preparing.webp",
     "banner": "images/preparing/preparing.webp",
-    "description": "가벼운 한줄소개입니다.",
+    "description": "한줄소개 준비중입니다.",
     "members": 1,
     "capacity": 30,
 
-    "category": ["NEW", "recruit"],
+    "category": ["HOT", "NEW", "recruit"],
+    "rank": 0,
+
+    "status": "모집중",
 
     "leader": "팸장",
     "manager": "운영진",
