@@ -50,11 +50,11 @@
   },
   
   {
-    "name": "응애",
+    "name": "응애군단",
     "image": "images/preparing/preparing.webp",
     "banner": "images/preparing/preparing.webp",
     "description": "한줄소개 준비중입니다.",
-    "members": 1,
+    "members": 40,
     "capacity": 50,
 
     "category": ["HOT", "recruit"],
@@ -62,12 +62,16 @@
 
     "status": "모집중",
 
-    "leader": "팸장",
-    "manager": "운영진",
+    "leader": "제리응애",
+    "manager": ["느므응애", "블리응애", "조아응애"],
 
-    "condition": "가입조건은 최대 3개 기입가능",
+    "condition": [
+      "레벨 24 이상의 대마왕 이상 칭호 보유자",
+      "게임을 많이 플레이하시는 이용자",
+      "공지 오픈채팅 참여 필수"
+    ],
 
-    "link": "https://open.kakao.com/o/example2"
+    "link": "https://open.kakao.com/o/snkB2Yfi"
   },
   
   {
