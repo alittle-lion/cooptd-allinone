@@ -1,5 +1,5 @@
 // ======================================================
-// Guild Site v2.1 (PART 1)
+// Guild Site v2.1
 // ======================================================
 
 let guilds = [];
@@ -252,15 +252,12 @@ function applyFilters() {
             switch (currentCategory) {
 
                 case "RANK":
-                    // rank 값이 있거나 category에 RANK가 있으면 RANK로 인식
                     return guild.rank != null || cats.includes("RANK");
 
                 case "recruit":
-                    // recruit 또는 모집중 둘 다 허용
                     return cats.includes("recruit") || cats.includes("모집중");
 
                 case "closed":
-                    // closed 또는 모집중단 둘 다 허용
                     return cats.includes("closed") || cats.includes("모집중단");
 
                 default:
@@ -291,7 +288,7 @@ function applyFilters() {
 
                 ||
 
-                ((guild.manager || guild.officers?.join(" ") || ""))
+                getManagerText(guild)
                     .toLowerCase()
                     .includes(currentKeyword)
             );
@@ -318,6 +315,32 @@ function normalizeCategory(category) {
     }
 
     return [category];
+}
+
+
+// ======================================================
+// 운영진(manager/officers) 텍스트 정규화
+// manager, officers가 문자열/배열 어떤 형태로 와도
+// 항상 안전한 문자열로 합쳐서 반환
+// ======================================================
+
+function getManagerText(guild) {
+
+    const parts = [];
+
+    if (Array.isArray(guild.manager)) {
+        parts.push(...guild.manager);
+    } else if (guild.manager) {
+        parts.push(guild.manager);
+    }
+
+    if (Array.isArray(guild.officers)) {
+        parts.push(...guild.officers);
+    } else if (guild.officers) {
+        parts.push(guild.officers);
+    }
+
+    return parts.join(", ");
 }
 
 
@@ -381,11 +404,7 @@ function openModal(guild) {
     const manager = document.getElementById("modalManager");
 
 	if (manager) {
-		if (Array.isArray(guild.officers)) {
-			manager.textContent = guild.officers.join(", ");
-		} else {
-			manager.textContent = guild.manager || "미등록";
-		}
+		manager.textContent = getManagerText(guild) || "미등록";
 	}
 
     // -----------------------------
@@ -495,7 +514,6 @@ function closeModal() {
 
     modal.classList.remove("show");
 
-    // 뒤 화면 스크롤 복원
     document.body.style.overflow = "";
 
 }
