@@ -10,6 +10,7 @@
 
 /* ==============================
    CLICKABLE ELEMENTS
+   (드래그/길게누르기 시 파란 선택 표시 방지)
 ============================== */
 
 button,
@@ -287,6 +288,7 @@ footer{
     display:flex;
     flex-direction:column;
     gap:6px;
+    flex:1;
 }
 
 .guild-top-row{
@@ -309,6 +311,7 @@ footer{
     font-size:.9rem;
     color:#c5d3ef;
     line-height:1.4;
+    flex:1;
 }
 
 /* ==============================
