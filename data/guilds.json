@@ -53,7 +53,7 @@
     "name": "응애군단",
     "image": "images/icons/baby.webp",
     "banner": "images/preparing/preparing.webp",
-    "description": "한줄소개 준비중입니다.",
+    "description": "뭐 어쩌라고",
     "members": 40,
     "capacity": 50,
 
@@ -66,9 +66,7 @@
     "manager": ["느므응애", "블리응애", "조아응애"],
 
     "condition": [
-      "레벨 24 이상의 대마왕 이상 칭호 보유자",
-      "게임을 많이 플레이하시는 이용자",
-      "공지 오픈채팅 참여 필수"
+      "우리 마음에 들면"
     ],
 
     "link": "https://open.kakao.com/o/snkB2Yfi"
