@@ -1090,3 +1090,50 @@ section{
     }
 
 }
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    margin-top:50px;
+
+    padding:30px 20px;
+
+    background:#0C1B38;
+
+    border-top:1px solid var(--border);
+
+    text-align:center;
+
+}
+
+footer p{
+
+    margin:0 auto;
+
+    max-width:900px;
+
+    line-height:1.9;
+
+    color:var(--sub);
+
+    text-align:center;
+
+}
+
+footer a{
+
+    color:#6EC8FF;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+}
+
+footer a:hover{
+
+    text-decoration:underline;
+
+}
