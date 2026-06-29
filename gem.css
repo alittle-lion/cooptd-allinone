@@ -1,0 +1,387 @@
+/* =========================================
+   기본 설정
+========================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:"Pretendard","Noto Sans KR",sans-serif;
+    background:#f4f6fb;
+    color:#333;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:30px 20px;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:35px;
+    font-size:2rem;
+}
+
+h2{
+    margin-bottom:15px;
+}
+
+/* =========================================
+   버튼
+========================================= */
+
+.draw-buttons{
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-bottom:40px;
+}
+
+.button-group{
+    background:white;
+    border-radius:12px;
+    padding:20px;
+    width:320px;
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+
+.button-group button{
+
+    width:100%;
+    padding:15px;
+
+    margin-top:10px;
+
+    border:none;
+    border-radius:8px;
+
+    cursor:pointer;
+
+    background:#3d7eff;
+    color:white;
+
+    font-size:16px;
+    font-weight:bold;
+
+    transition:.2s;
+}
+
+.button-group button:hover{
+
+    background:#255fe0;
+
+}
+
+/* =========================================
+   결과 영역
+========================================= */
+
+.result-section{
+
+    background:white;
+
+    border-radius:12px;
+
+    padding:25px;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+
+    margin-bottom:35px;
+}
+
+/* 항상 5열 */
+
+.result-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(5,1fr);
+
+    gap:15px;
+
+}
+
+/* 카드 */
+
+.result-card{
+
+    background:white;
+
+    border-radius:10px;
+
+    border:2px solid #ddd;
+
+    min-height:120px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.result-card:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 8px 18px rgba(0,0,0,.15);
+
+}
+
+.result-card .grade{
+
+    font-size:24px;
+
+    font-weight:bold;
+
+    margin-bottom:10px;
+
+}
+
+.result-card .name{
+
+    font-size:15px;
+
+    text-align:center;
+
+    padding:0 8px;
+
+    word-break:keep-all;
+
+}
+
+/* =========================================
+   등급별 색상
+========================================= */
+
+.grade-C{
+
+    border-color:#8b8b8b;
+
+}
+
+.grade-B{
+
+    border-color:#43b047;
+
+}
+
+.grade-A{
+
+    border-color:#2f7cff;
+
+}
+
+.grade-S{
+
+    border-color:#9b3fff;
+
+}
+
+.grade-SS{
+
+    border-color:#f1b400;
+
+}
+
+/* =========================================
+   통계
+========================================= */
+
+.statistics{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:12px;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+
+}
+
+.statistics table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+.statistics th,
+.statistics td{
+
+    border:1px solid #ddd;
+
+    padding:12px;
+
+    text-align:center;
+
+}
+
+.statistics thead{
+
+    background:#f1f3f6;
+
+}
+
+.statistics tfoot{
+
+    background:#fafafa;
+
+    font-weight:bold;
+
+}
+
+/* =========================================
+   모달
+========================================= */
+
+.modal{
+
+    display:none;
+
+    position:fixed;
+
+    left:0;
+    top:0;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,.5);
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:20px;
+
+    z-index:999;
+}
+
+.modal-content{
+
+    width:100%;
+
+    max-width:500px;
+
+    background:white;
+
+    border-radius:12px;
+
+    padding:25px;
+
+    position:relative;
+
+}
+
+.close{
+
+    position:absolute;
+
+    right:20px;
+
+    top:15px;
+
+    font-size:28px;
+
+    cursor:pointer;
+
+}
+
+/* =========================================
+   모바일
+========================================= */
+
+@media (max-width:768px){
+
+    .container{
+
+        padding:15px;
+
+    }
+
+    .button-group{
+
+        width:100%;
+
+    }
+
+    .result-grid{
+
+        grid-template-columns:repeat(5,1fr);
+
+        gap:8px;
+
+    }
+
+    .result-card{
+
+        min-height:80px;
+
+    }
+
+    .result-card .grade{
+
+        font-size:18px;
+
+    }
+
+    .result-card .name{
+
+        font-size:11px;
+
+    }
+
+}
+
+@media (max-width:480px){
+
+    .result-grid{
+
+        grid-template-columns:repeat(5,1fr);
+
+        gap:6px;
+
+    }
+
+    .result-card{
+
+        min-height:70px;
+
+    }
+
+    .result-card .grade{
+
+        font-size:16px;
+
+    }
+
+    .result-card .name{
+
+        font-size:10px;
+
+    }
+
+    .statistics th,
+    .statistics td{
+
+        font-size:13px;
+
+        padding:8px;
+
+    }
+
+}
