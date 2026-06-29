@@ -121,13 +121,14 @@
   
   {
     "name": "밍밍단",
-    "image": "images/preparing/preparing.webp",
+    "image": "images/icons/mingming.webp",
     "banner": "images/preparing/preparing.webp",
     "description": "밍!",
     "members": 44,
     "capacity": 50,
 
     "category": ["HOT", "recruit"],
+    "rank": 0,
 
     "leader": "다밍",
     "manager": "히밍",
