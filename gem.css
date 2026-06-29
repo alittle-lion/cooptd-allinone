@@ -1,6 +1,11 @@
-/* =========================================
-   기본 설정
-========================================= */
+/* =====================================================
+   Gem Simulator CSS v2.0
+   Part 1
+===================================================== */
+
+/* =========================
+   RESET
+========================= */
 
 *{
     margin:0;
@@ -8,93 +13,238 @@
     box-sizing:border-box;
 }
 
-body{
-    font-family:"Pretendard","Noto Sans KR",sans-serif;
-    background:#f4f6fb;
-    color:#333;
+:root{
+
+    --bg:#15284E;
+    --card:#0C1B38;
+    --card2:#13264A;
+
+    --border:#1A9FFF;
+
+    --text:#ffffff;
+    --sub:#C8D4F2;
+
+    --hover:#1e3f76;
+
+    --shadow:0 10px 30px rgba(0,0,0,.28);
+
 }
+
+body{
+
+    font-family:'Pretendard',sans-serif;
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    line-height:1.5;
+
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+
+    max-width:1200px;
+
+    margin:40px auto 30px;
+
+    text-align:center;
+
+    padding:0 20px;
+
+}
+
+header h1{
+
+    font-size:2.6rem;
+
+    font-weight:800;
+
+    margin-bottom:10px;
+
+}
+
+header p{
+
+    color:var(--sub);
+
+    font-size:15px;
+
+    line-height:1.8;
+
+    margin-bottom:25px;
+
+}
+
+.back-btn{
+
+    display:inline-block;
+
+    text-decoration:none;
+
+    color:white;
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    padding:12px 28px;
+
+    border-radius:12px;
+
+    transition:.25s;
+
+    font-weight:700;
+
+}
+
+.back-btn:hover{
+
+    background:var(--hover);
+
+    transform:translateY(-2px);
+
+}
+
+/* =========================
+   CONTAINER
+========================= */
 
 .container{
-    max-width:1100px;
+
+    max-width:1200px;
+
     margin:auto;
-    padding:30px 20px;
+
+    padding:20px;
+
 }
 
-h1{
-    text-align:center;
+/* =========================
+   SECTION
+========================= */
+
+section{
+
     margin-bottom:35px;
-    font-size:2rem;
+
 }
 
-h2{
-    margin-bottom:15px;
+/* =========================
+   카드 공통
+========================= */
+
+.button-group,
+.result-section,
+.statistics{
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    box-shadow:var(--shadow);
+
 }
 
-/* =========================================
-   버튼
-========================================= */
+/* =========================
+   뽑기 영역
+========================= */
 
 .draw-buttons{
-    display:flex;
-    gap:20px;
-    justify-content:center;
-    flex-wrap:wrap;
-    margin-bottom:40px;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:25px;
+
 }
 
 .button-group{
-    background:white;
-    border-radius:12px;
-    padding:20px;
-    width:320px;
-    box-shadow:0 4px 12px rgba(0,0,0,.08);
+
+    padding:30px;
+
 }
+
+.button-group h2{
+
+    text-align:center;
+
+    margin-bottom:25px;
+
+    font-size:1.6rem;
+
+}
+
+/* =========================
+   버튼
+========================= */
 
 .button-group button{
 
     width:100%;
-    padding:15px;
 
-    margin-top:10px;
+    margin-top:15px;
+
+    padding:16px;
 
     border:none;
-    border-radius:8px;
+
+    border-radius:12px;
+
+    background:#203C72;
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:700;
 
     cursor:pointer;
 
-    background:#3d7eff;
-    color:white;
+    transition:.25s;
 
-    font-size:16px;
-    font-weight:bold;
+    border:1px solid transparent;
 
-    transition:.2s;
 }
 
 .button-group button:hover{
 
-    background:#255fe0;
+    background:#2C5BA9;
+
+    border-color:#4DB6FF;
+
+    transform:translateY(-2px);
 
 }
 
-/* =========================================
-   결과 영역
-========================================= */
+/* =========================
+   최근 결과
+========================= */
 
 .result-section{
 
-    background:white;
+    padding:30px;
 
-    border-radius:12px;
-
-    padding:25px;
-
-    box-shadow:0 4px 12px rgba(0,0,0,.08);
-
-    margin-bottom:35px;
 }
 
-/* 항상 5열 */
+.result-section h2{
+
+    text-align:center;
+
+    margin-bottom:25px;
+
+    font-size:1.8rem;
+
+}
+
+/* 항상 5칸 */
 
 .result-grid{
 
@@ -102,21 +252,23 @@ h2{
 
     grid-template-columns:repeat(5,1fr);
 
-    gap:15px;
+    gap:16px;
 
 }
 
-/* 카드 */
+/* =========================
+   결과 카드
+========================= */
 
 .result-card{
 
-    background:white;
+    background:var(--card2);
 
-    border-radius:10px;
+    border:2px solid #355D9A;
 
-    border:2px solid #ddd;
+    border-radius:14px;
 
-    min-height:120px;
+    min-height:140px;
 
     display:flex;
 
@@ -128,86 +280,81 @@ h2{
 
     cursor:pointer;
 
-    transition:.2s;
+    transition:.25s;
+
+    position:relative;
+
 }
 
 .result-card:hover{
 
-    transform:translateY(-4px);
+    transform:translateY(-5px);
 
-    box-shadow:0 8px 18px rgba(0,0,0,.15);
+    box-shadow:0 0 20px rgba(0,162,255,.25);
 
 }
 
+/* 등급 */
+
 .result-card .grade{
 
-    font-size:24px;
+    font-size:28px;
 
-    font-weight:bold;
+    font-weight:800;
 
     margin-bottom:10px;
 
 }
 
-.result-card .name{
+/* 이름 */
 
-    font-size:15px;
+.result-card .name{
 
     text-align:center;
 
-    padding:0 8px;
+    font-size:15px;
+
+    font-weight:700;
+
+    padding:0 10px;
 
     word-break:keep-all;
 
 }
 
-/* =========================================
-   등급별 색상
-========================================= */
+/* 클릭 안내 */
 
-.grade-C{
+.result-card::after{
 
-    border-color:#8b8b8b;
+    content:"클릭하여 효과 보기";
 
-}
+    position:absolute;
 
-.grade-B{
+    bottom:8px;
 
-    border-color:#43b047;
+    font-size:11px;
 
-}
-
-.grade-A{
-
-    border-color:#2f7cff;
+    color:#8EA9D6;
 
 }
 
-.grade-S{
-
-    border-color:#9b3fff;
-
-}
-
-.grade-SS{
-
-    border-color:#f1b400;
-
-}
-
-/* =========================================
+/* =========================
    통계
-========================================= */
+========================= */
 
 .statistics{
 
-    background:white;
+    padding:30px;
 
-    padding:25px;
+}
 
-    border-radius:12px;
+.statistics h2{
 
-    box-shadow:0 4px 12px rgba(0,0,0,.08);
+    text-align:center;
+
+    margin-bottom:25px;
+
+    font-size:1.8rem;
 
 }
 
@@ -217,36 +364,112 @@ h2{
 
     border-collapse:collapse;
 
-}
+    overflow:hidden;
 
-.statistics th,
-.statistics td{
-
-    border:1px solid #ddd;
-
-    padding:12px;
-
-    text-align:center;
+    border-radius:12px;
 
 }
 
 .statistics thead{
 
-    background:#f1f3f6;
+    background:#1E3D72;
 
 }
 
 .statistics tfoot{
 
-    background:#fafafa;
+    background:#102343;
 
-    font-weight:bold;
+    font-weight:700;
 
 }
 
-/* =========================================
+.statistics th,
+.statistics td{
+
+    padding:14px;
+
+    text-align:center;
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.statistics td{
+
+    color:#E4ECFF;
+
+}
+
+/* =========================
+   등급별 카드 색상
+========================= */
+
+.grade-C{
+
+    border-color:#8E8E8E;
+
+}
+
+.grade-C .grade{
+
+    color:#BDBDBD;
+
+}
+
+.grade-B{
+
+    border-color:#38C172;
+
+}
+
+.grade-B .grade{
+
+    color:#38C172;
+
+}
+
+.grade-A{
+
+    border-color:#42A5F5;
+
+}
+
+.grade-A .grade{
+
+    color:#42A5F5;
+
+}
+
+.grade-S{
+
+    border-color:#B56CFF;
+
+}
+
+.grade-S .grade{
+
+    color:#B56CFF;
+
+}
+
+.grade-SS{
+
+    border-color:#FFD54F;
+
+    box-shadow:0 0 20px rgba(255,213,79,.15);
+
+}
+
+.grade-SS .grade{
+
+    color:#FFD54F;
+
+}
+
+/* =========================
    모달
-========================================= */
+========================= */
 
 .modal{
 
@@ -254,36 +477,85 @@ h2{
 
     position:fixed;
 
-    left:0;
-    top:0;
+    inset:0;
 
-    width:100%;
-    height:100%;
-
-    background:rgba(0,0,0,.5);
+    background:rgba(0,0,0,.65);
 
     justify-content:center;
 
     align-items:center;
 
+    z-index:9999;
+
     padding:20px;
 
-    z-index:999;
 }
 
 .modal-content{
 
     width:100%;
 
-    max-width:500px;
+    max-width:650px;
 
-    background:white;
+    background:var(--card);
 
-    border-radius:12px;
+    border:1px solid var(--border);
 
-    padding:25px;
+    border-radius:18px;
+
+    padding:30px;
+
+    color:white;
+
+    box-shadow:var(--shadow);
 
     position:relative;
+
+}
+
+.modal-content h2{
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+}
+
+.modal-content p{
+
+    margin:12px 0;
+
+    color:var(--sub);
+
+}
+
+.modal-content hr{
+
+    border:none;
+
+    border-top:1px solid rgba(255,255,255,.15);
+
+    margin:20px 0;
+
+}
+
+.modal-content h3{
+
+    margin-bottom:15px;
+
+}
+
+.modal-content ul{
+
+    padding-left:20px;
+
+}
+
+.modal-content li{
+
+    margin-bottom:10px;
+
+    color:#D9E8FF;
 
 }
 
@@ -291,31 +563,131 @@ h2{
 
     position:absolute;
 
-    right:20px;
+    right:18px;
 
-    top:15px;
+    top:12px;
 
-    font-size:28px;
+    font-size:32px;
 
     cursor:pointer;
 
+    transition:.2s;
+
 }
 
-/* =========================================
+.close:hover{
+
+    color:#4DB6FF;
+
+    transform:scale(1.15);
+
+}
+
+/* =========================
+   스크롤바
+========================= */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#102343;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#3D6CC5;
+
+    border-radius:50px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#5D8DE8;
+
+}
+
+/* =========================
+   애니메이션
+========================= */
+
+.result-card{
+
+    animation:cardFade .25s ease;
+
+}
+
+@keyframes cardFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(10px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* =========================
    모바일
-========================================= */
+========================= */
+
+@media (max-width:900px){
+
+    .draw-buttons{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
 
 @media (max-width:768px){
 
-    .container{
+    header h1{
 
-        padding:15px;
+        font-size:2rem;
+
+    }
+
+    header p{
+
+        font-size:14px;
 
     }
 
     .button-group{
 
-        width:100%;
+        padding:20px;
+
+    }
+
+    .button-group h2{
+
+        font-size:1.35rem;
+
+    }
+
+    .button-group button{
+
+        font-size:15px;
+
+        padding:14px;
 
     }
 
@@ -329,13 +701,13 @@ h2{
 
     .result-card{
 
-        min-height:80px;
+        min-height:90px;
 
     }
 
     .result-card .grade{
 
-        font-size:18px;
+        font-size:20px;
 
     }
 
@@ -343,11 +715,43 @@ h2{
 
         font-size:11px;
 
+        padding:0 4px;
+
+    }
+
+    .result-card::after{
+
+        display:none;
+
+    }
+
+    .statistics{
+
+        overflow-x:auto;
+
     }
 
 }
 
 @media (max-width:480px){
+
+    header{
+
+        margin-top:25px;
+
+    }
+
+    header h1{
+
+        font-size:1.6rem;
+
+    }
+
+    .container{
+
+        padding:12px;
+
+    }
 
     .result-grid{
 
@@ -359,7 +763,9 @@ h2{
 
     .result-card{
 
-        min-height:70px;
+        min-height:74px;
+
+        border-radius:10px;
 
     }
 
@@ -367,21 +773,63 @@ h2{
 
         font-size:16px;
 
+        margin-bottom:4px;
+
     }
 
     .result-card .name{
 
-        font-size:10px;
+        font-size:9px;
+
+        line-height:1.2;
 
     }
 
     .statistics th,
     .statistics td{
 
-        font-size:13px;
+        padding:9px;
 
-        padding:8px;
+        font-size:12px;
 
     }
+
+    .modal-content{
+
+        padding:20px;
+
+    }
+
+}
+
+/* =========================
+   1회 뽑기
+========================= */
+
+.result-grid:has(.result-card:only-child){
+
+    grid-template-columns:1fr !important;
+
+    max-width:420px;
+
+    margin:0 auto;
+
+}
+
+.result-grid:has(.result-card:only-child) .result-card{
+
+    min-height:220px;
+
+}
+
+.result-grid:has(.result-card:only-child) .grade{
+
+    font-size:42px;
+
+}
+
+.result-grid:has(.result-card:only-child) .name{
+
+    font-size:20px;
 
 }
