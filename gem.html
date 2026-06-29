@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>보석 뽑기 시뮬레이터</title>
+
+    <link rel="stylesheet" href="gem.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>보석 뽑기 시뮬레이터</h1>
+
+        <!-- ========================= -->
+        <!-- 뽑기 버튼 -->
+        <!-- ========================= -->
+
+        <section class="draw-buttons">
+
+            <div class="button-group">
+                <h2>일반 젤리</h2>
+
+                <button id="normal1">일반 1회</button>
+                <button id="normal10">일반 10회</button>
+            </div>
+
+            <div class="button-group">
+                <h2>로얄 젤리</h2>
+
+                <button id="royal1">로얄 1회</button>
+                <button id="royal10">로얄 10회</button>
+            </div>
+
+        </section>
+
+        <!-- ========================= -->
+        <!-- 최근 결과 -->
+        <!-- ========================= -->
+
+        <section class="result-section">
+
+            <h2>최근 뽑기 결과</h2>
+
+            <div id="resultGrid" class="result-grid">
+
+                <!-- gem.js에서 자동 생성 -->
+
+            </div>
+
+        </section>
+
+        <!-- ========================= -->
+        <!-- 통계 -->
+        <!-- ========================= -->
+
+        <section class="statistics">
+
+            <h2>누적 통계</h2>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>등급</th>
+                        <th>획득 개수</th>
+                        <th>획득 비율</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>C</td>
+                        <td id="countC">0</td>
+                        <td id="rateC">0%</td>
+                    </tr>
+
+                    <tr>
+                        <td>B</td>
+                        <td id="countB">0</td>
+                        <td id="rateB">0%</td>
+                    </tr>
+
+                    <tr>
+                        <td>A</td>
+                        <td id="countA">0</td>
+                        <td id="rateA">0%</td>
+                    </tr>
+
+                    <tr>
+                        <td>S</td>
+                        <td id="countS">0</td>
+                        <td id="rateS">0%</td>
+                    </tr>
+
+                    <tr>
+                        <td>SS</td>
+                        <td id="countSS">0</td>
+                        <td id="rateSS">0%</td>
+                    </tr>
+
+                </tbody>
+
+                <tfoot>
+
+                    <tr>
+                        <th>총 뽑기</th>
+                        <th colspan="2" id="totalDraws">0</th>
+                    </tr>
+
+                </tfoot>
+
+            </table>
+
+        </section>
+
+    </div>
+
+    <!-- ========================= -->
+    <!-- 보석 상세 정보 -->
+    <!-- ========================= -->
+
+    <div id="gemModal" class="modal">
+
+        <div class="modal-content">
+
+            <span class="close" id="closeModal">&times;</span>
+
+            <h2 id="modalName">보석 이름</h2>
+
+            <p>
+                <strong>등급 :</strong>
+                <span id="modalGrade"></span>
+            </p>
+
+            <p>
+                <strong>종류 :</strong>
+                <span id="modalType"></span>
+            </p>
+
+            <hr>
+
+            <h3>효과</h3>
+
+            <ul id="modalEffect">
+
+            </ul>
+
+        </div>
+
+    </div>
+
+    <script src="gem.js"></script>
+
+</body>
+
+</html>
