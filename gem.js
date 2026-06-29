@@ -47,7 +47,7 @@ async function loadGems() {
 
     try {
 
-        const response = await fetch("gems.json");
+        const response = await fetch("data/gems.json");
 
         gems = await response.json();
 
