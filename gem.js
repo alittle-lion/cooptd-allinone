@@ -249,9 +249,9 @@ function openGemModal(gem) {
 
     modalEffect.innerHTML = "";
 
-    if (Array.isArray(gem.effect)) {
+    if (Array.isArray(gem.effects)) {
 
-        gem.effect.forEach(effect => {
+        gem.effects.forEach(effect => {
 
             const li = document.createElement("li");
 
