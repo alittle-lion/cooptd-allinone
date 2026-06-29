@@ -1,6 +1,5 @@
 /* =====================================================
    Gem Simulator CSS v2.0
-   Part 1
 ===================================================== */
 
 /* =========================
@@ -831,5 +830,263 @@ section{
 .result-grid:has(.result-card:only-child) .name{
 
     font-size:20px;
+
+}
+/* =====================================================
+   Gem Simulator CSS v2.1 (추가 개선)
+===================================================== */
+
+
+/* =========================
+   버튼 클릭 효과
+========================= */
+
+.button-group button{
+    transition:
+        background .25s,
+        border-color .25s,
+        transform .18s,
+        box-shadow .25s;
+}
+
+.button-group button:hover{
+
+    box-shadow:0 0 18px rgba(77,182,255,.35);
+
+}
+
+.button-group button:active{
+
+    transform:scale(.97);
+
+}
+
+
+/* =========================
+   결과 카드 개선
+========================= */
+
+.result-card{
+
+    overflow:hidden;
+
+    transition:
+        transform .25s,
+        box-shadow .25s,
+        border-color .25s;
+
+}
+
+.result-card:hover{
+
+    transform:
+        translateY(-5px)
+        scale(1.02);
+
+}
+
+
+/* =========================
+   등급별 배경
+========================= */
+
+.grade-C{
+
+    background:
+        linear-gradient(
+            180deg,
+            #444,
+            #262626
+        );
+
+}
+
+.grade-B{
+
+    background:
+        linear-gradient(
+            180deg,
+            #1f5f3b,
+            #143623
+        );
+
+}
+
+.grade-A{
+
+    background:
+        linear-gradient(
+            180deg,
+            #225f9b,
+            #17395d
+        );
+
+}
+
+.grade-S{
+
+    background:
+        linear-gradient(
+            180deg,
+            #6b35b5,
+            #3d176f
+        );
+
+}
+
+.grade-SS{
+
+    background:
+        linear-gradient(
+            180deg,
+            #9a7a13,
+            #5b4608
+        );
+
+    box-shadow:
+        0 0 10px rgba(255,213,79,.30),
+        0 0 24px rgba(255,213,79,.18);
+
+}
+
+
+/* =========================
+   SS 카드 반짝임
+========================= */
+
+.grade-SS::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-120%;
+
+    background:
+        linear-gradient(
+            120deg,
+            transparent,
+            rgba(255,255,255,.28),
+            transparent
+        );
+
+    transform:rotate(25deg);
+
+    animation:ssShine 3s linear infinite;
+
+}
+
+@keyframes ssShine{
+
+    from{
+
+        left:-150%;
+
+    }
+
+    to{
+
+        left:180%;
+
+    }
+
+}
+
+
+/* =========================
+   카드 등장 애니메이션
+========================= */
+
+.result-card{
+
+    animation:cardPop .35s ease-out;
+
+}
+
+@keyframes cardPop{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(12px)
+            scale(.95);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+/* =========================
+   모달 개선
+========================= */
+
+.modal-content{
+
+    max-height:85vh;
+
+    overflow-y:auto;
+
+}
+
+.modal-content::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+
+/* =========================
+   모바일 개선
+========================= */
+
+@media(max-width:768px){
+
+    .button-group{
+
+        padding:18px;
+
+    }
+
+    .button-group button{
+
+        margin-top:10px;
+
+    }
+
+    .statistics table{
+
+        min-width:520px;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .button-group h2{
+
+        font-size:1.2rem;
+
+    }
+
+    .button-group button{
+
+        font-size:14px;
+
+        padding:13px;
+
+    }
 
 }
