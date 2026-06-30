@@ -225,7 +225,66 @@
   },
 
   {
-    "name": "길드10",
+    "name": "중독",
+    "image": "images/preparing/preparing.webp",
+    "banner": "images/preparing/preparing.webp",
+    "description": "함께 성장하고 함께 승리하는 협동 디펜스 길드",
+    "members": 15,
+    "capacity": 20,
+
+    "category": ["NEW", "recruit"],
+
+    "leader": "잔틱",
+    "manager": "말랑민돌",
+
+    "condition": [
+      "오래 함께 성장하실 분",
+      "3일 이상 미접속 시 사유 없이 정리",
+      "매너 있는 유저 환영"
+    ],
+
+
+    "link": "https://open.kakao.com/o/gnPdJUBi"
+  },
+
+  {
+    "name": "길드11",
+    "image": "images/preparing/preparing.webp",
+    "banner": "images/preparing/preparing.webp",
+    "description": "가벼운 한줄소개입니다.",
+    "members": 1,
+    "capacity": 30,
+
+    "category": ["NEW", "recruit"],
+
+    "leader": "팸장",
+    "manager": "운영진",
+
+    "condition": "가입조건은 최대 3개 기입가능",
+
+    "link": "https://open.kakao.com/o/example2"
+  },
+
+  {
+    "name": "길드12",
+    "image": "images/preparing/preparing.webp",
+    "banner": "images/preparing/preparing.webp",
+    "description": "가벼운 한줄소개입니다.",
+    "members": 1,
+    "capacity": 30,
+
+    "category": ["NEW", "recruit"],
+
+    "leader": "팸장",
+    "manager": "운영진",
+
+    "condition": "가입조건은 최대 3개 기입가능",
+
+    "link": "https://open.kakao.com/o/example2"
+  },
+
+  {
+    "name": "길드13",
     "image": "images/preparing/preparing.webp",
     "banner": "images/preparing/preparing.webp",
     "description": "가벼운 한줄소개입니다.",
