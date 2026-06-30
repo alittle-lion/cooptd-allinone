@@ -165,21 +165,24 @@
   },
   
   {
-    "name": "길드7",
+    "name": "학교",
     "image": "images/preparing/preparing.webp",
     "banner": "images/preparing/preparing.webp",
-    "description": "가벼운 한줄소개입니다.",
+    "description": "심해를 매일놀러가는 학교라생각하는길드",
     "members": 1,
     "capacity": 30,
 
     "category": ["NEW", "recruit"],
 
-    "leader": "팸장",
-    "manager": "운영진",
+    "leader": "lluvia",
+    "manager": "",
 
-    "condition": "가입조건은 최대 3개 기입가능",
+    "condition": [
+      "26레벨 이상, 오픈채팅 참여 필수",
+      "코블 심해딜러"
+    ],
 
-    "link": "https://open.kakao.com/o/example2"
+    "link": "https://open.kakao.com/o/szxkk0di"
   },
 
   {
