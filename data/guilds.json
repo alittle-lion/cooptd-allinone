@@ -77,8 +77,8 @@
     "image": "images/icons/arti1.webp",
     "banner": "images/banners/arti1.webp",
     "description": "함께 성장하는 어센틱입니다!",
-    "members": 49,
-    "capacity": 50,
+    "members": 39,
+    "capacity": 58,
 
     "category": ["HOT", "NEW", "closed"],
     "rank": 0,
