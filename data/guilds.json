@@ -204,21 +204,24 @@
   },
 
   {
-    "name": "길드9",
+    "name": "꼬마",
     "image": "images/preparing/preparing.webp",
     "banner": "images/preparing/preparing.webp",
-    "description": "가벼운 한줄소개입니다.",
-    "members": 1,
+    "description": "협타디? 꼬마가 정복했지!! 너도 합류해!!",
+    "members": 14,
     "capacity": 30,
 
     "category": ["NEW", "recruit"],
 
-    "leader": "팸장",
-    "manager": "운영진",
+    "leader": "꼬마위드",
+    "manager": "꼬마띵구",
 
-    "condition": "가입조건은 최대 3개 기입가능",
+    "condition": [
+      "게임을 즐겁게 즐기자!",
+      "닉네임 자율제 라고!"
+    ],
 
-    "link": "https://open.kakao.com/o/example2"
+    "link": "https://open.kakao.com/me/comawith"
   },
 
   {
