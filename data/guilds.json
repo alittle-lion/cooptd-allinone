@@ -186,21 +186,21 @@
   },
 
   {
-    "name": "길드8",
+    "name": "마왕",
     "image": "images/preparing/preparing.webp",
     "banner": "images/preparing/preparing.webp",
-    "description": "가벼운 한줄소개입니다.",
+    "description": "이름 멋있잖아~ 마왕",
     "members": 1,
     "capacity": 30,
 
     "category": ["NEW", "recruit"],
 
-    "leader": "팸장",
-    "manager": "운영진",
+    "leader": "율이랑압뿌",
+    "manager": "",
 
-    "condition": "가입조건은 최대 3개 기입가능",
+    "condition": "열정 열정 열정",
 
-    "link": "https://open.kakao.com/o/example2"
+    "link": "https://open.kakao.com/o/sLsWEvHe"
   },
 
   {
