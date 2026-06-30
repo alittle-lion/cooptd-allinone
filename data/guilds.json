@@ -147,17 +147,17 @@
     "image": "images/icons/nuooo.webp",
     "banner": "images/banners/nuooo.webp",
     "description": "어서오세요 누우우 길드입니다!",
-    "members": 15,
+    "members": 20,
     "capacity": 20,
 
-    "category": ["NEW", "recruit"],
+    "category": ["NEW", "closed"],
 
     "leader": "삠삠",
     "manager": "강윰",
 
     "condition": [
       "15레벨 이상, 오픈채팅 참여 필수",
-      "2번에는 2일 미접, 기여도 없을시 추방",
+      "2일 미접, 기여도 없을시 추방",
       "어려움, 지옥 각 30판 이상"
     ],
 
