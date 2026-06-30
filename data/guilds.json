@@ -80,7 +80,7 @@
     "members": 49,
     "capacity": 50,
 
-    "category": ["HOT", "NEW", "recruit"],
+    "category": ["HOT", "NEW", "closed"],
     "rank": 0,
 
     "status": "모집중단",
