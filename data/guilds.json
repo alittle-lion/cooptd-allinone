@@ -190,7 +190,7 @@
     "image": "images/icons/making.webp",
     "banner": "images/preparing/preparing.webp",
     "description": "이름 멋있잖아~ 마왕",
-    "members": 1,
+    "members": 16,
     "capacity": 30,
 
     "category": ["NEW", "recruit"],
