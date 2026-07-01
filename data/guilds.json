@@ -166,11 +166,11 @@
   
   {
     "name": "학교",
-    "image": "images/preparing/preparing.webp",
+    "image": "images/icons/school.webp",
     "banner": "images/preparing/preparing.webp",
     "description": "심해를 매일놀러가는 학교라생각하는길드",
-    "members": 1,
-    "capacity": 30,
+    "members": 8,
+    "capacity": 29,
 
     "category": ["NEW", "recruit"],
 
