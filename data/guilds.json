@@ -247,21 +247,25 @@
   },
 
   {
-    "name": "길드11",
+    "name": "깐부",
     "image": "images/preparing/preparing.webp",
     "banner": "images/preparing/preparing.webp",
-    "description": "가벼운 한줄소개입니다.",
-    "members": 1,
-    "capacity": 30,
+    "description": "협타디 깐부회동",
+    "members": 4,
+    "capacity": 20,
 
     "category": ["NEW", "recruit"],
 
-    "leader": "팸장",
-    "manager": "운영진",
+    "leader": "마이안",
+    "manager": "스카트",
 
-    "condition": "가입조건은 최대 3개 기입가능",
+    "condition": [
+      "24레벨 이상, 오픈채팅은 가급적 참여",
+      "교주 칭호 보유자",
+      "심해 같이 가실분 (열쇠작, 클리어 목표)"
+    ],
 
-    "link": "https://open.kakao.com/o/example2"
+    "link": "https://open.kakao.com/o/sUM9a1Bi"
   },
 
   {
