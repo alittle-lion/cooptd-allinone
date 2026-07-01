@@ -147,8 +147,8 @@
     "image": "images/icons/nuooo.webp",
     "banner": "images/banners/nuooo.webp",
     "description": "어서오세요 누우우 길드입니다!",
-    "members": 20,
-    "capacity": 20,
+    "members": 21,
+    "capacity": 41,
 
     "category": ["NEW", "closed"],
 
