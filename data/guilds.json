@@ -80,7 +80,7 @@
     "members": 39,
     "capacity": 58,
 
-    "category": ["HOT", "NEW", "closed"],
+    "category": ["HOT", "closed"],
     "rank": 0,
 
     "status": "모집중단",
@@ -190,10 +190,10 @@
     "image": "images/icons/making.webp",
     "banner": "images/preparing/preparing.webp",
     "description": "이름 멋있잖아~ 마왕",
-    "members": 16,
-    "capacity": 30,
+    "members": 20,
+    "capacity": 20,
 
-    "category": ["NEW", "recruit"],
+    "category": ["NEW", "closed"],
 
     "leader": "율이랑압뿌",
     "manager": "",
