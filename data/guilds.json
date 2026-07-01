@@ -270,8 +270,8 @@
 
   {
     "name": "레전드 디펜스",
-    "image": "images/preparing/preparing.webp",
-    "banner": "images/preparing/preparing.webp",
+    "image": "images/icons/legend.webp",
+    "banner": "images/banners/legend.webp",
     "description": "함께해서 행복하고, 다 같이 협동하며 성장하는 길드입니다.",
     "members": 18,
     "capacity": 20,
