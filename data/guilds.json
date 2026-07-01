@@ -270,8 +270,8 @@
 
   {
     "name": "팬텀",
-    "image": "images/preparing/preparing.webp",
-    "banner": "images/preparing/preparing.webp",
+    "image": "images/icons/phantom.webp",
+    "banner": "images/banners/phantom.webp",
     "description": "그림자처럼 움직이고, 전설처럼 기억될 자.",
     "members": 10,
     "capacity": 20,
@@ -292,6 +292,60 @@
 
   {
     "name": "길드13",
+    "image": "images/preparing/preparing.webp",
+    "banner": "images/preparing/preparing.webp",
+    "description": "가벼운 한줄소개입니다.",
+    "members": 1,
+    "capacity": 30,
+
+    "category": ["NEW", "recruit"],
+
+    "leader": "팸장",
+    "manager": "운영진",
+
+    "condition": "가입조건은 최대 3개 기입가능",
+
+    "link": "https://open.kakao.com/o/example"
+  },
+
+  {
+    "name": "길드14",
+    "image": "images/preparing/preparing.webp",
+    "banner": "images/preparing/preparing.webp",
+    "description": "가벼운 한줄소개입니다.",
+    "members": 1,
+    "capacity": 30,
+
+    "category": ["NEW", "recruit"],
+
+    "leader": "팸장",
+    "manager": "운영진",
+
+    "condition": "가입조건은 최대 3개 기입가능",
+
+    "link": "https://open.kakao.com/o/example"
+  },
+
+  {
+    "name": "길드15",
+    "image": "images/preparing/preparing.webp",
+    "banner": "images/preparing/preparing.webp",
+    "description": "가벼운 한줄소개입니다.",
+    "members": 1,
+    "capacity": 30,
+
+    "category": ["NEW", "recruit"],
+
+    "leader": "팸장",
+    "manager": "운영진",
+
+    "condition": "가입조건은 최대 3개 기입가능",
+
+    "link": "https://open.kakao.com/o/example"
+  },
+
+  {
+    "name": "길드16",
     "image": "images/preparing/preparing.webp",
     "banner": "images/preparing/preparing.webp",
     "description": "가벼운 한줄소개입니다.",
