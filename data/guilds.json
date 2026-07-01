@@ -273,8 +273,8 @@
     "image": "images/preparing/preparing.webp",
     "banner": "images/preparing/preparing.webp",
     "description": "함께해서 행복하고, 다 같이 협동하며 성장하는 길드입니다.",
-    "members": 1,
-    "capacity": 30,
+    "members": 18,
+    "capacity": 20,
 
     "category": ["NEW", "recruit"],
 
