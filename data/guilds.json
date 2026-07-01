@@ -248,8 +248,8 @@
 
   {
     "name": "깐부",
-    "image": "images/preparing/preparing.webp",
-    "banner": "images/preparing/preparing.webp",
+    "image": "images/icons/gganbu.webp",
+    "banner": "images/banners/gganbu.webp",
     "description": "협타디 깐부회동",
     "members": 4,
     "capacity": 20,
@@ -269,21 +269,25 @@
   },
 
   {
-    "name": "길드12",
+    "name": "팬텀",
     "image": "images/preparing/preparing.webp",
     "banner": "images/preparing/preparing.webp",
-    "description": "가벼운 한줄소개입니다.",
-    "members": 1,
-    "capacity": 30,
+    "description": "그림자처럼 움직이고, 전설처럼 기억될 자.",
+    "members": 10,
+    "capacity": 20,
 
     "category": ["NEW", "recruit"],
 
-    "leader": "팸장",
-    "manager": "운영진",
+    "leader": "幻광안",
+    "manager": ["幻팬텀", "幻솜별"],
 
-    "condition": "가입조건은 최대 3개 기입가능",
+    "condition": [
+      "심연에서 1인분 하시는분, 오픈채팅 참여 필수",
+      "아이디 변경 가능하신분 닉 앞 (환상 환 幻) 뒤에 자유닉 두글자",
+      "매너와 소통을 중요하게 생각하는 분"
+    ],
 
-    "link": "https://open.kakao.com/o/example2"
+    "link": "https://open.kakao.com/o/sTReWfBi"
   },
 
   {
@@ -301,6 +305,6 @@
 
     "condition": "가입조건은 최대 3개 기입가능",
 
-    "link": "https://open.kakao.com/o/example2"
+    "link": "https://open.kakao.com/o/example"
   }
 ]
