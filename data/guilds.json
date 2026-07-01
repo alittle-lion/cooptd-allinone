@@ -295,8 +295,8 @@
     "image": "images/icons/gongdwu.webp",
     "banner": "images/banners/gongdwu.webp",
     "description": "남녀노소 누구나 환영합니다",
-    "members": 1,
-    "capacity": 30,
+    "members": 20,
+    "capacity": 29,
 
     "category": ["NEW", "recruit"],
 
