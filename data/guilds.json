@@ -291,21 +291,26 @@
   },
 
   {
-    "name": "길드13",
+    "name": "공듀",
     "image": "images/preparing/preparing.webp",
     "banner": "images/preparing/preparing.webp",
-    "description": "가벼운 한줄소개입니다.",
+    "description": "남녀노소 누구나 환영합니다",
     "members": 1,
     "capacity": 30,
 
     "category": ["NEW", "recruit"],
 
-    "leader": "팸장",
-    "manager": "운영진",
+    "leader": "유림공듀",
+    "manager": ["우병공듀", "재온공듀"],
 
-    "condition": "가입조건은 최대 3개 기입가능",
+    "condition": [
+      "20 레벨 이상",
+      "오픈채팅 참여 필수",
+      "마왕군 일일 의뢰 필수"
+    ],
 
-    "link": "https://open.kakao.com/o/example"
+
+    "link": "https://open.kakao.com/o/sY7RFpzi"
   },
 
   {
