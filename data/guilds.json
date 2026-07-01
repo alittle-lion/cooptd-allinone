@@ -269,6 +269,28 @@
   },
 
   {
+    "name": "레전드 디펜스",
+    "image": "images/preparing/preparing.webp",
+    "banner": "images/preparing/preparing.webp",
+    "description": "함께해서 행복하고, 다 같이 협동하며 성장하는 길드입니다.",
+    "members": 1,
+    "capacity": 30,
+
+    "category": ["NEW", "recruit"],
+
+    "leader": "벼리리링",
+    "manager": "",
+
+    "condition": [
+      "5일 이상 미접속 금지",
+      "일일 퀘스트 꾸준히 참여 가능하신 분",
+      "길드원 간 기본적인 예의를 지켜주실 분"
+    ],
+
+    "link": "https://open.kakao.com/o/shiWTWBi"
+  },
+
+  {
     "name": "팬텀",
     "image": "images/icons/phantom.webp",
     "banner": "images/banners/phantom.webp",
