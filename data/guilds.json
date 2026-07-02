@@ -331,26 +331,29 @@
       "마왕군 일일 의뢰 필수"
     ],
 
-
     "link": "https://open.kakao.com/o/sY7RFpzi"
   },
 
   {
-    "name": "길드14",
+    "name": "낭만",
     "image": "images/preparing/preparing.webp",
     "banner": "images/preparing/preparing.webp",
-    "description": "가벼운 한줄소개입니다.",
-    "members": 1,
-    "capacity": 30,
+    "description": "함께하는 순간들이 모여 우리만의 낭만이 됩니다.",
+    "members": 21,
+    "capacity": 58,
 
     "category": ["NEW", "recruit"],
 
-    "leader": "팸장",
-    "manager": "운영진",
+    "leader": "LuckyRouge",
+    "manager": ["젼공주파워머신","라온로운아빠"],
 
-    "condition": "가입조건은 최대 3개 기입가능",
+    "condition": [
+      "접속률 꾸준하신 분, 오픈채팅 참여 필수",
+      "기본 매너와 배려 있으신 분",
+      "중상위컨텐츠 함께하실 분 '우대'"
+    ],
 
-    "link": "https://open.kakao.com/o/example"
+    "link": "https://open.kakao.com/o/saXsaaCi"
   },
 
   {
