@@ -336,8 +336,8 @@
 
   {
     "name": "낭만",
-    "image": "images/preparing/preparing.webp",
-    "banner": "images/preparing/preparing.webp",
+    "image": "images/icons/romance.webp",
+    "banner": "images/banners/romance.webp",
     "description": "함께하는 순간들이 모여 우리만의 낭만이 됩니다.",
     "members": 21,
     "capacity": 58,
