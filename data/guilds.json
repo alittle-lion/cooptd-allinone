@@ -317,10 +317,10 @@
     "image": "images/icons/gongdwu.webp",
     "banner": "images/banners/gongdwu.webp",
     "description": "남녀노소 누구나 환영합니다",
-    "members": 20,
+    "members": 21,
     "capacity": 29,
 
-    "category": ["NEW", "recruit"],
+    "category": ["NEW", "closed"],
 
     "leader": "유림공듀",
     "manager": ["우병공듀", "재온공듀"],
