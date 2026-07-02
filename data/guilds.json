@@ -390,5 +390,149 @@
     "condition": "가입조건은 최대 3개 기입가능",
 
     "link": "https://open.kakao.com/o/example"
+  },
+
+  {
+    "name": "길드17",
+    "image": "images/preparing/preparing.webp",
+    "banner": "images/preparing/preparing.webp",
+    "description": "가벼운 한줄소개입니다.",
+    "members": 1,
+    "capacity": 30,
+
+    "category": ["NEW", "recruit"],
+
+    "leader": "팸장",
+    "manager": "운영진",
+
+    "condition": "가입조건은 최대 3개 기입가능",
+
+    "link": "https://open.kakao.com/o/example"
+  },
+
+  {
+    "name": "길드18",
+    "image": "images/preparing/preparing.webp",
+    "banner": "images/preparing/preparing.webp",
+    "description": "가벼운 한줄소개입니다.",
+    "members": 1,
+    "capacity": 30,
+
+    "category": ["NEW", "recruit"],
+
+    "leader": "팸장",
+    "manager": "운영진",
+
+    "condition": "가입조건은 최대 3개 기입가능",
+
+    "link": "https://open.kakao.com/o/example"
+  },
+
+  {
+    "name": "길드19",
+    "image": "images/preparing/preparing.webp",
+    "banner": "images/preparing/preparing.webp",
+    "description": "가벼운 한줄소개입니다.",
+    "members": 1,
+    "capacity": 30,
+
+    "category": ["NEW", "recruit"],
+
+    "leader": "팸장",
+    "manager": "운영진",
+
+    "condition": "가입조건은 최대 3개 기입가능",
+
+    "link": "https://open.kakao.com/o/example"
+  },
+
+  {
+    "name": "길드20",
+    "image": "images/preparing/preparing.webp",
+    "banner": "images/preparing/preparing.webp",
+    "description": "가벼운 한줄소개입니다.",
+    "members": 1,
+    "capacity": 30,
+
+    "category": ["NEW", "recruit"],
+
+    "leader": "팸장",
+    "manager": "운영진",
+
+    "condition": "가입조건은 최대 3개 기입가능",
+
+    "link": "https://open.kakao.com/o/example"
+  },
+
+  {
+    "name": "길드21",
+    "image": "images/preparing/preparing.webp",
+    "banner": "images/preparing/preparing.webp",
+    "description": "가벼운 한줄소개입니다.",
+    "members": 1,
+    "capacity": 30,
+
+    "category": ["NEW", "recruit"],
+
+    "leader": "팸장",
+    "manager": "운영진",
+
+    "condition": "가입조건은 최대 3개 기입가능",
+
+    "link": "https://open.kakao.com/o/example"
+  },
+
+  {
+    "name": "길드22",
+    "image": "images/preparing/preparing.webp",
+    "banner": "images/preparing/preparing.webp",
+    "description": "가벼운 한줄소개입니다.",
+    "members": 1,
+    "capacity": 30,
+
+    "category": ["NEW", "recruit"],
+
+    "leader": "팸장",
+    "manager": "운영진",
+
+    "condition": "가입조건은 최대 3개 기입가능",
+
+    "link": "https://open.kakao.com/o/example"
+  },
+
+  {
+    "name": "길드23",
+    "image": "images/preparing/preparing.webp",
+    "banner": "images/preparing/preparing.webp",
+    "description": "가벼운 한줄소개입니다.",
+    "members": 1,
+    "capacity": 30,
+
+    "category": ["NEW", "recruit"],
+
+    "leader": "팸장",
+    "manager": "운영진",
+
+    "condition": "가입조건은 최대 3개 기입가능",
+
+    "link": "https://open.kakao.com/o/example"
+  },
+
+  {
+    "name": "길드24",
+    "image": "images/preparing/preparing.webp",
+    "banner": "images/preparing/preparing.webp",
+    "description": "가벼운 한줄소개입니다.",
+    "members": 1,
+    "capacity": 30,
+
+    "category": ["NEW", "recruit"],
+
+    "leader": "팸장",
+    "manager": "운영진",
+
+    "condition": "가입조건은 최대 3개 기입가능",
+
+    "link": "https://open.kakao.com/o/example"
   }
 ]
