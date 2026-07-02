@@ -358,8 +358,8 @@
 
   {
     "name": "블랙",
-    "image": "images/preparing/preparing.webp",
-    "banner": "images/preparing/preparing.webp",
+    "image": "images/icons/black.webp",
+    "banner": "images/banners/black.webp",
     "description": "검은색은 끝이 아닌, 모든 가능성을 품은 색",
     "members": 21,
     "capacity": 50,
