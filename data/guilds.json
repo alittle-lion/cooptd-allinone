@@ -357,21 +357,25 @@
   },
 
   {
-    "name": "길드15",
+    "name": "블랙",
     "image": "images/preparing/preparing.webp",
     "banner": "images/preparing/preparing.webp",
-    "description": "가벼운 한줄소개입니다.",
-    "members": 1,
-    "capacity": 30,
+    "description": "검은색은 끝이 아닌, 모든 가능성을 품은 색",
+    "members": 21,
+    "capacity": 50,
 
     "category": ["NEW", "recruit"],
 
-    "leader": "팸장",
-    "manager": "운영진",
+    "leader": "유전",
+    "manager": ["까꿍아", "눈이침침해요", "방망이"],
 
-    "condition": "가입조건은 최대 3개 기입가능",
+    "condition": [
+      "24레벨 이상 오픈채팅 참여 필수",
+      "교주 칭호 보유자",
+      "활발하게 게임에 응하시는 분"
+    ],
 
-    "link": "https://open.kakao.com/o/example"
+    "link": "https://open.kakao.com/o/sUiB00Bi"
   },
 
   {
