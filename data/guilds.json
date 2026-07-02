@@ -146,7 +146,7 @@
     "name": "누우우",
     "image": "images/icons/nuooo.webp",
     "banner": "images/banners/nuooo.webp",
-    "description": "어서오세요 누우우 길드입니다!",
+    "description": "누우우 2기 길드원 모집중입니다!",
     "members": 21,
     "capacity": 41,
 
@@ -295,8 +295,8 @@
     "image": "images/icons/phantom.webp",
     "banner": "images/banners/phantom.webp",
     "description": "그림자처럼 움직이고, 전설처럼 기억될 자.",
-    "members": 10,
-    "capacity": 20,
+    "members": 20,
+    "capacity": 21,
 
     "category": ["NEW", "recruit"],
 
